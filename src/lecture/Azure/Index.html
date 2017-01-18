@@ -328,10 +328,9 @@
 					<ul>
 						<li>механизмы настройки, контроля и отслеживания ВМ</li>
 						<li>балансировщик нагрузки между ВМ</li>
-						<li>интсрумент подключения к другим облачным службам Windows Azure, на которых работают веб-роли
-							и рабочие роли</li>
-						<li>можно копировть виртуальные жесткие диски (Virtual Hard Disk, VHD) из локальной среды в Azure и на их
-							основе создать новые виртуальные машины</li>
+						<li>интсрумент подключения к другим облачным службам Windows Azure, на которых работают веб-роли и рабочие роли</li>
+						<li>можно копировть виртуальные жесткие диски (Virtual Hard Disk, VHD) из локальной среды в Azure и на их основе создать
+							новые виртуальные машины</li>
 						<li>Возможно и обратное действие — выгрузить VHD из Windows Azure и запустить их локально в центре обработки данных</li>
 						<li>Новые виртуальные машины можно создавать из стандартных образов, доступ- ных в галерее Windows Azure. В число стандартных
 							образов входят актуальные версии Windows Server, различные сборки Linux, а также Microsoft SharePoint, Microsoft SQL
@@ -352,8 +351,8 @@
 						<li>со- храняются и самостоятельно восстанавливаются после аппаратных сбоев</li>
 						<li>Любые подключенные к вирту- альной машине диски также сохраняются, они резервированы BLOB-объектами хранилища Windows
 							Azure. Между тем, экземпляры веб-ролей и рабочих ролей самовосстанавливаются, но не сохраняются</li>
-						<li>Использование виртуальных машин тарифицируется по часам, поэтому для эко-
-номии средств вы можете просто отключить ненужные машины. </li>
+						<li>Использование виртуальных машин тарифицируется по часам, поэтому для эко- номии средств вы можете просто отключить
+							ненужные машины. </li>
 					</ul>
 				</section>
 			</section>
@@ -389,32 +388,24 @@
 				</section>
 				<section>
 					<blockquote>
-						С помощью облачных служб Windows Azure можно быстро создавать, развер-
-тывать многоуровневые приложения в облаке и управлять ими. Используя облачные службы, вы можете сконцентрироваться на разработке, те-
-стировании, развертывании и управлении приложением, а не тратить время на
-обслуживание нижележащей инфраструктуры
+						С помощью облачных служб Windows Azure можно быстро создавать, развер- тывать многоуровневые приложения в облаке и управлять
+						ими. Используя облачные службы, вы можете сконцентрироваться на разработке, те- стировании, развертывании и управлении
+						приложением, а не тратить время на обслуживание нижележащей инфраструктуры
 					</blockquote>
 				</section>
 				<section>
 					<h3>Особенности</h3>
 					<ul>
-						<li>Для распреде-
-ленной обработки и гибкого масштабирования приложения можно назначить
-ему несколько ролей</li>
-						<li> Приложения облачных служб можно создать практически
-на любой популярной платформе разработки, включая .NET, Node.js, PHP, Java,
-Python и Ruby.</li>
-						<li> Кроме того, в облачное приложение можно интегрировать мо-
-бильные службы Windows Azure и мультимедийные службы.</li>
-						<li>На портале управления Windows Azure можно отслеживать работоспособность и
-доступность приложений в облачных службах</li>
-						<li> Можно также настроить оповеще-
-ния в реальном времени о сбоях в работе служб или снижении их производитель-
-ности</li>
-					<li>А с помощью новой функции автомасштабирования ваше приложение бу-
-дет автоматически получать или отдавать ресурсы по мере необходимости. Это
-удешевит обслуживание приложений в облаке, так как оплата будет взиматься
-только за фактически использованные ресурсы</li>
+						<li>Для распреде- ленной обработки и гибкого масштабирования приложения можно назначить ему несколько ролей</li>
+						<li> Приложения облачных служб можно создать практически на любой популярной платформе разработки, включая .NET, Node.js,
+							PHP, Java, Python и Ruby.</li>
+						<li> Кроме того, в облачное приложение можно интегрировать мо- бильные службы Windows Azure и мультимедийные службы.</li>
+						<li>На портале управления Windows Azure можно отслеживать работоспособность и доступность приложений в облачных службах</li>
+						<li> Можно также настроить оповеще- ния в реальном времени о сбоях в работе служб или снижении их производитель- ности
+						</li>
+						<li>А с помощью новой функции автомасштабирования ваше приложение бу- дет автоматически получать или отдавать ресурсы по
+							мере необходимости. Это удешевит обслуживание приложений в облаке, так как оплата будет взиматься только за фактически
+							использованные ресурсы</li>
 					</ul>
 				</section>
 			</section>
@@ -423,7 +414,251 @@ Python и Ruby.</li>
 					<h2>Сетевые службы Windows Azure</h2>
 				</section>
 				<section>
+				</section>
+			</section>
+			<section>
+				<h1>Application Insights</h1>
+			</section>
+			<section>
+				<section>
+					<h2>Основные методы и свойства</h2>
+				</section>
+				<section>
+					<h2>Метод TrackPageView</h2>
+					<blockquote>
+						отправляет название страницы (web, mobile, desktop)-приложения, с которой пользователь работает в данный момент 
+					</blockquote>
+					<pre>
+						<code class="hljs">
+public void TrackPageView(string name);
+						</code>
+					</pre>
+					<pre>
+						<code class="hljs">
+public void TrackPageView(PageViewTelemetry telemetry);
+						</code>
+					</pre>
+				</section>
+				<section>
+					<h3>Класс PageViewTelemetry</h3>
+					<blockquote>
+						используется для отслеживания посещаймости страниц пользователями
+					</blockquote>
+					<pre>
+						<code class="hljs">
+public sealed class PageViewTelemetry : ITelemetry, ISupportProperties, ISupportSampling
+{
+    public PageViewTelemetry();
+    public PageViewTelemetry(string pageName);
 
+    //  Возвращает контекст для назначенного telemetry-элемента
+    public TelemetryContext Context { get; }
+
+    //  Длительность посещения страницы
+    public TimeSpan Duration { get; set; }
+
+    //  Пользовательские метрики
+    public IDictionary<string, double> Metrics { get; }
+
+	// Имя страницы
+    public string Name { get; set; }
+
+    // Словарь для дополнительных параметров
+    public IDictionary<string, string> Properties { get; }
+
+    //   Задает абсолютный порядок telemetry-элемента
+    public string Sequence { get; set; }
+
+    // Время, когда событие произошло
+    public DateTimeOffset Timestamp { get; set; }
+
+    // URL-страницы
+    public Uri Url { get; set; }
+}
+						</code>
+					</pre>
+				</section>
+				<section>
+					<h3>Метод TrackRequest</h3>
+					<blockquote>
+						логирование или имитирование выполнения HTTP-запросов
+					</blockquote>
+					<pre>
+						<code class="hljs">
+name: имя запроса или путь
+startTime: время инициализации запроса
+duration: продолжительность выполнения
+responseCode: status code
+success: True, если обработан успешно
+public void TrackRequest(string name, DateTimeOffset startTime, TimeSpan duration, string responseCode, bool success);				
+						</code>
+					</pre>
+					<pre>
+						<code class="hljs">
+public void TrackRequest(RequestTelemetry request);
+						</code>
+					</pre>
+				</section>
+				<section>
+					<h3>Класс RequestTelemetry</h3>
+					<blockquote>
+						инкапсулирует информацию о HTTP-запросах в приложении
+					</blockquote>
+					<pre>
+						<code class="hljs">
+public sealed class RequestTelemetry : OperationTelemetry, ITelemetry, ISupportProperties, ISupportSampling
+{
+    public RequestTelemetry();
+    public RequestTelemetry(string name, DateTimeOffset startTime, TimeSpan duration, string responseCode, bool success);
+    public override TelemetryContext Context { get; }
+    public override TimeSpan Duration { get; set; }
+    public string HttpMethod { get; set; }
+    // Идентификатор запроса
+    public override string Id { get; set; }
+    public IDictionary<string, double> Metrics { get; }
+    //  Имя человека, выполнявшего запрос
+    public override string Name { get; set; }
+    public override IDictionary<string, string> Properties { get; }
+    public string ResponseCode { get; set; }
+    public override string Sequence { get; set; }
+    // Идентифицирует субъект, обычно записывается хеш
+    public string Source { get; set; }
+    public override bool? Success { get; set; }
+    public override DateTimeOffset Timestamp { get; set; }
+    public Uri Url { get; set; }
+}
+						</code>
+					</pre>
+				</section>
+				<section>
+					<h3>Метод TrackTrace</h3>
+					<blockquote>
+						Use this to help diagnose problems by sending a 'breadcrumb trail' to Application Insights. You can send chunks of diagnostic data, and inspect them in Diagnostic search.
+
+Log adapters use this API to send third-party logs to the portal.
+					</blockquote>
+					<pre>
+						<code class="hljs">
+							  //
+        // Summary:
+        //     Send a trace message for display in Diagnostic Search. Create a separate Microsoft.ApplicationInsights.DataContracts.TraceTelemetry
+        //     instance for each call to Microsoft.ApplicationInsights.TelemetryClient.TrackTrace(Microsoft.ApplicationInsights.DataContracts.TraceTelemetry).
+        //
+        // Parameters:
+        //   telemetry:
+        //     Message with optional properties.
+        public void TrackTrace(TraceTelemetry telemetry);
+        //
+        // Summary:
+        //     Send a trace message for display in Diagnostic Search.
+        //
+        // Parameters:
+        //   message:
+        //     Message to display.
+        public void TrackTrace(string message);
+        //
+        // Summary:
+        //     Send a trace message for display in Diagnostic Search.
+        //
+        // Parameters:
+        //   message:
+        //     Message to display.
+        //
+        //   properties:
+        //     Named string values you can use to search and classify events.
+        public void TrackTrace(string message, IDictionary<string, string> properties);
+        //
+        // Summary:
+        //     Send a trace message for display in Diagnostic Search.
+        //
+        // Parameters:
+        //   message:
+        //     Message to display.
+        //
+        //   severityLevel:
+        //     Trace severity level.
+        public void TrackTrace(string message, SeverityLevel severityLevel);
+        //
+        // Summary:
+        //     Send a trace message for display in Diagnostic Search.
+        //
+        // Parameters:
+        //   message:
+        //     Message to display.
+        //
+        //   severityLevel:
+        //     Trace severity level.
+        //
+        //   properties:
+        //     Named string values you can use to search and classify events.
+        public void TrackTrace(string message, SeverityLevel severityLevel, IDictionary<string, string> properties);
+						</code>
+					</pre>
+				</section>
+				<section>
+					<h3>SeverityLevel</h3>
+					<pre>
+						<code class="hljs">
+							 //
+    // Summary:
+    //     This enumeration is used by ExceptionTelemetry and TraceTelemetry to identify
+    //     severity level.
+    public enum SeverityLevel
+    {
+        //
+        // Summary:
+        //     Verbose severity level.
+        Verbose = 0,
+        //
+        // Summary:
+        //     Information severity level.
+        Information = 1,
+        //
+        // Summary:
+        //     Warning severity level.
+        Warning = 2,
+        //
+        // Summary:
+        //     Error severity level.
+        Error = 3,
+        //
+        // Summary:
+        //     Critical severity level.
+        Critical = 4
+    }
+						</code>
+					</pre>
+				</section>
+				<section>
+					<h3>Метод Track Exception</h3>
+					<blockquote>
+						Send exceptions to Application Insights: to count them, as an indication of the frequency of a problem; and to examine individual occurrences. The reports include the stack <traces class=""></traces>
+					</blockquote>
+					<pre>
+						<code class="hljs">
+							        //
+        // Summary:
+        //     Send an Microsoft.ApplicationInsights.DataContracts.ExceptionTelemetry for display
+        //     in Diagnostic Search. Create a separate Microsoft.ApplicationInsights.DataContracts.ExceptionTelemetry
+        //     instance for each call to Microsoft.ApplicationInsights.TelemetryClient.TrackException(Microsoft.ApplicationInsights.DataContracts.ExceptionTelemetry)
+        public void TrackException(ExceptionTelemetry telemetry);
+        //
+        // Summary:
+        //     Send an Microsoft.ApplicationInsights.DataContracts.ExceptionTelemetry for display
+        //     in Diagnostic Search.
+        //
+        // Parameters:
+        //   exception:
+        //     The exception to log.
+        //
+        //   properties:
+        //     Named string values you can use to classify and search for this exception.
+        //
+        //   metrics:
+        //     Additional values associated with this exception.
+        public void TrackException(Exception exception, IDictionary<string, string> properties = null, IDictionary<string, double> metrics = null);
+						</code>
+					</pre>
 				</section>
 			</section>
 			<section>

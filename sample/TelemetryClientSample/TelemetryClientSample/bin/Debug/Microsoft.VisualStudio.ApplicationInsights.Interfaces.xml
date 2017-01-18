@@ -1,0 +1,157 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.VisualStudio.ApplicationInsights.Interfaces</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.VisualStudio.ApplicationInsights.Extensibility.IAddApplicationInsightsInfo">
+            <summary>
+            An info object for AddToProject arguments
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.ApplicationInsights.Extensibility.IAddApplicationInsightsInfo.Hierarchy">
+            <summary>
+            The IVsHierarchy for the project to add Application Insights to
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.ApplicationInsights.Extensibility.IAddApplicationInsightsInfo.InstrumentationKey">
+            <summary>
+            The instrumentation key for the selected Application Insights resource
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.ApplicationInsights.Extensibility.IAddApplicationInsightsInfo.IsNewProject">
+            <summary>
+            True if invoked from new project dialog, false otherwise
+            </summary>
+        </member>
+        <member name="T:Microsoft.VisualStudio.ApplicationInsights.Extensibility.ResourceType">
+            <summary>
+            An enum defining the resource type
+            </summary>
+        </member>
+        <member name="F:Microsoft.VisualStudio.ApplicationInsights.Extensibility.ResourceType.Web">
+            <summary>
+            A web resource
+            </summary>
+        </member>
+        <member name="F:Microsoft.VisualStudio.ApplicationInsights.Extensibility.ResourceType.Phone">
+            <summary>
+            A phone resource
+            </summary>
+        </member>
+        <member name="F:Microsoft.VisualStudio.ApplicationInsights.Extensibility.ResourceType.Store">
+            <summary>
+            A store resource
+            </summary>
+        </member>
+        <member name="F:Microsoft.VisualStudio.ApplicationInsights.Extensibility.ResourceType.Java">
+            <summary>
+            A java resource
+            </summary>
+        </member>
+        <member name="F:Microsoft.VisualStudio.ApplicationInsights.Extensibility.ResourceType.Other">
+            <summary>
+            A other resource
+            </summary>
+        </member>
+        <member name="T:Microsoft.VisualStudio.ApplicationInsights.Extensibility.IAddApplicationInsightsProvider">
+            <summary>
+            A MEF exportable interface that defines an Application Insights Provider.  Exporters of this interface should also specify ExportMetadata with properties
+            specifed by the IAddApplicationInsightsProviderMetadata interface.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.ApplicationInsights.Extensibility.IAddApplicationInsightsProvider.ResourceType">
+            <summary>
+            The Application Insights resource type.  
+            </summary>
+        </member>
+        <member name="M:Microsoft.VisualStudio.ApplicationInsights.Extensibility.IAddApplicationInsightsProvider.CanAddToProject(Microsoft.VisualStudio.Shell.Interop.IVsHierarchy)">
+            <summary>
+            Checks if provider can support the given project.  This method should return true if the IVsHierarchy can support Application Insights, but 
+            the Application Insights package is not yet installed.
+            </summary>
+            <param name="vsHierarchy">The hierarchy node for the project</param>
+            <returns>True if provider can support project</returns>
+        </member>
+        <member name="M:Microsoft.VisualStudio.ApplicationInsights.Extensibility.IAddApplicationInsightsProvider.AddToProject(Microsoft.VisualStudio.ApplicationInsights.Extensibility.IAddApplicationInsightsInfo)">
+            <summary>
+            Execute the work to add Application Insights to project
+            </summary>
+            <param name="info">Info object for containing relavant information on the state of the project</param>
+            <returns>An awaitable task that completes when finished adding Application Insights</returns>
+        </member>
+        <member name="M:Microsoft.VisualStudio.ApplicationInsights.Extensibility.IAddApplicationInsightsProvider.CanUpdateProject(Microsoft.VisualStudio.Shell.Interop.IVsHierarchy)">
+            <summary>
+            Checks if the provider can update Application Insights for the given project.  This method should return true if it is detected that the Application Insights
+            package is already installed for the given IVsHierarchy. 
+            </summary>
+            <param name="vsHierarchy">The project to update</param>
+            <returns>True if provider can update Application Insights for the project</returns>
+        </member>
+        <member name="M:Microsoft.VisualStudio.ApplicationInsights.Extensibility.IAddApplicationInsightsProvider.UpdateProject(Microsoft.VisualStudio.ApplicationInsights.Extensibility.IAddApplicationInsightsInfo)">
+            <summary>
+            Execute the work to update Application Insights for the project
+            </summary>
+            <param name="info">Info object for containing relavant information on the state of the project</param>
+            <returns>An awaitable task that completes when finished adding Application Insights</returns>
+        </member>
+        <member name="T:Microsoft.VisualStudio.ApplicationInsights.Extensibility.IAddApplicationInsightsProviderMetadata">
+            <summary>
+            MEF Metadata for IAddApplicationInsightsProvider.  A provider will match if either of the conditions defined by this metadata
+            are true.  A project will match if the IVsHierarchy has any of the project type guids defined in the ProjectTypeGuids property or if the project 
+            is a capability match with respect to the expression defined by the ProjectCapabilities property
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.ApplicationInsights.Extensibility.IAddApplicationInsightsProviderMetadata.ProjectTypeGuids">
+            <summary>
+            The project type guids that this provider supports, the guids should be semicolon separated, for example
+            {7a0fdb67-8978-48d3-bb8d-1a948bdcddef};{c0452f24-bb84-432d-8e06-ceb94e5ca029}
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.ApplicationInsights.Extensibility.IAddApplicationInsightsProviderMetadata.ProjectCapabilities">
+            <summary>
+            The project capability match expression, such as (VisualC | CSharp) + (MSTest | NUnit). The '|' is the OR operator. The '&amp;' and '+' characters are both AND operators. The '!' character is the NOT operator. Parentheses force evaluation precedence order.
+            </summary>
+        </member>
+        <member name="T:Microsoft.VisualStudio.ApplicationInsights.Extensibility.ProvideApplicationInsightsTemplateAttribute">
+            <summary>
+            This attribute registers the package as an Application Insights template provider.
+            </summary>
+        </member>
+        <member name="M:Microsoft.VisualStudio.ApplicationInsights.Extensibility.ProvideApplicationInsightsTemplateAttribute.#ctor(System.String[])">
+            <summary>
+            Register the package as an Application Insights template provider
+            </summary>
+            <param name="templateIds">A params array of templates (TemplateId) that this package supports.</param>
+        </member>
+        <member name="M:Microsoft.VisualStudio.ApplicationInsights.Extensibility.ProvideApplicationInsightsTemplateAttribute.Register(Microsoft.VisualStudio.Shell.RegistrationAttribute.RegistrationContext)">
+            <summary>
+            Called to register this attribute with the given context.  The context contains the location where the registration information
+            should be placed. Registers the TemplateIds that this instance was initialized with.
+            </summary>
+            <param name="context">The RegistrationContext</param>
+        </member>
+        <member name="M:Microsoft.VisualStudio.ApplicationInsights.Extensibility.ProvideApplicationInsightsTemplateAttribute.Unregister(Microsoft.VisualStudio.Shell.RegistrationAttribute.RegistrationContext)">
+            <summary>
+            Unregisters the package's Application Insights template provider information
+            </summary>
+            <param name="context">The RegistrationContext</param>
+        </member>
+        <member name="T:Microsoft.VisualStudio.ApplicationInsights.Interfaces.IApplicationInsightsSearchService">
+            <summary>
+            Interface for search explorer action
+            </summary>
+        </member>
+        <member name="T:Microsoft.VisualStudio.ApplicationInsights.Interfaces.IApplicationInsightsService">
+            <summary>
+            The Application Insights service
+            </summary>
+        </member>
+        <member name="M:Microsoft.VisualStudio.ApplicationInsights.Interfaces.IApplicationInsightsService.IsEnabled">
+            <summary>
+            True if Application Insights was enabled by the user in the new project dialog.
+            </summary>
+            <returns>True if Application Insights was enabled by the user in the new project dialog.</returns>
+        </member>
+    </members>
+</doc>
