@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Security.Authentication;
 using Microsoft.ApplicationInsights;
-using Microsoft.ApplicationInsights.Channel;
 using Microsoft.ApplicationInsights.DataContracts;
 
 namespace TelemetryClientSample
@@ -11,18 +10,24 @@ namespace TelemetryClientSample
     {
         static void Main(string[] args)
         {
-
             ApplicationInsight.Instance.TrackPageView("Home");
-            ApplicationInsight.Instance.TrackEvent("Redirect", new Dictionary<string, string> { { "From", "Home" }, { "To", "Account" } });
+            ApplicationInsight.Instance.TrackEvent("Redirect",
+                new Dictionary<string, string> { { "From", "Home" }, { "To", "Account" } });
 
             ApplicationInsight.Instance.TrackPageView("Account");
             ApplicationInsight.Instance.TrackEvent("Login");
             ApplicationInsight.Instance.TrackException(new AuthenticationException("User not found"));
-            ApplicationInsight.Instance.TrackEvent("Redirect", new Dictionary<string, string> { { "From", "Account" }, { "To", "Shop" }, {"DailyKey" , "DSJU-WERDT-9803"} });
+            ApplicationInsight.Instance.TrackEvent("Redirect",
+                new Dictionary<string, string>
+                {
+                    { "From", "Account" },
+                    { "To", "Shop" },
+                    { "DailyKey" , "DSJU-WERDT-9803"}
+                });
 
             ApplicationInsight.Instance.TrackPageView("Shop");
-
             ApplicationInsight.Instance.TrackTrace("Overtime", 100);
+            ApplicationInsight.Instance.TrackMetric("Total count", 32);
 
             ApplicationInsight.Instance.Flush();
         }
@@ -37,7 +42,6 @@ namespace TelemetryClientSample
         private ApplicationInsight()
         {
             _tc = InitializeTelemetry();
-
         }
 
         public static ApplicationInsight Instance
@@ -49,11 +53,9 @@ namespace TelemetryClientSample
         {
             var tc = new TelemetryClient
             {
-                InstrumentationKey =
-                    @"clientNotification-ddadd7d9-4bd5-411a-ab5c-c1fe3322e005;a518aea0-2971-4fd4-9c38-595b8ffee7ab;a518aea0-2971-4fd4-9c38-595b8ffee7ab"
+                InstrumentationKey = @"11d0404f-5be6-4d86-a3ce-311cd10b1b0f"
             };
 
-            // Set session data:
             tc.Context.User.Id = Environment.UserName;
             tc.Context.Session.Id = Guid.NewGuid().ToString();
             tc.Context.Device.OperatingSystem = Environment.OSVersion.ToString();
@@ -71,25 +73,15 @@ namespace TelemetryClientSample
             _tc.TrackException(ex);
         }
 
-        public void Track(ITelemetry telemetry)
-        {
-            _tc.Track(telemetry);
-        }
-
-        public void Flush()
-        {
-            _tc.Flush();
-        }
-
         public void TrackEvent(string eventName, Dictionary<string, string> options = null)
         {
             _tc.TrackEvent(eventName, options);
         }
 
-        //public void TrackEvent(string eventName)
-        //{
-        //    _tc.TrackAvailability();
-        //}
+        public void TrackMetric(string metricName, int value)
+        {
+            _tc.TrackMetric(metricName, value);
+        }
 
         public void TrackTrace(string eventName, int number)
         {
@@ -99,17 +91,10 @@ namespace TelemetryClientSample
                 new Dictionary<string, string> { { "number", number.ToString() } }
             );
         }
-    }
 
-    public class CustomTelemetry : ITelemetry
-    {
-        public void Sanitize()
+        public void Flush()
         {
-            throw new NotImplementedException();
+            _tc.Flush();
         }
-
-        public DateTimeOffset Timestamp { get; set; }
-        public TelemetryContext Context { get; }
-        public string Sequence { get; set; }
     }
 }

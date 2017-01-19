@@ -16,3 +16,21 @@ c:\users\maksim.hladki\documents\visual studio 2015\Projects\TelemetryClientSamp
 c:\users\maksim.hladki\documents\visual studio 2015\Projects\TelemetryClientSample\TelemetryClientSample\obj\Debug\TelemetryClientSample.csprojResolveAssemblyReference.cache
 c:\users\maksim.hladki\documents\visual studio 2015\Projects\TelemetryClientSample\TelemetryClientSample\obj\Debug\TelemetryClientSample.exe
 c:\users\maksim.hladki\documents\visual studio 2015\Projects\TelemetryClientSample\TelemetryClientSample\obj\Debug\TelemetryClientSample.pdb
+G:\Maksim.Hladki\test\CT\sample\TelemetryClientSample\TelemetryClientSample\bin\Debug\TelemetryClientSample.exe.config
+G:\Maksim.Hladki\test\CT\sample\TelemetryClientSample\TelemetryClientSample\obj\Debug\TelemetryClientSample.exe
+G:\Maksim.Hladki\test\CT\sample\TelemetryClientSample\TelemetryClientSample\obj\Debug\TelemetryClientSample.pdb
+G:\Maksim.Hladki\test\CT\sample\TelemetryClientSample\TelemetryClientSample\bin\Debug\TelemetryClientSample.exe
+G:\Maksim.Hladki\test\CT\sample\TelemetryClientSample\TelemetryClientSample\bin\Debug\TelemetryClientSample.pdb
+G:\Maksim.Hladki\test\CT\sample\TelemetryClientSample\TelemetryClientSample\bin\Debug\Microsoft.ApplicationInsights.dll
+G:\Maksim.Hladki\test\CT\sample\TelemetryClientSample\TelemetryClientSample\bin\Debug\Microsoft.VisualStudio.ApplicationInsights.Interfaces.dll
+G:\Maksim.Hladki\test\CT\sample\TelemetryClientSample\TelemetryClientSample\bin\Debug\Microsoft.VisualStudio.Shell.Interop.dll
+G:\Maksim.Hladki\test\CT\sample\TelemetryClientSample\TelemetryClientSample\bin\Debug\Microsoft.VisualStudio.Shell.Immutable.10.0.dll
+G:\Maksim.Hladki\test\CT\sample\TelemetryClientSample\TelemetryClientSample\bin\Debug\Microsoft.VisualStudio.OLE.Interop.dll
+G:\Maksim.Hladki\test\CT\sample\TelemetryClientSample\TelemetryClientSample\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.dll
+G:\Maksim.Hladki\test\CT\sample\TelemetryClientSample\TelemetryClientSample\bin\Debug\Microsoft.ApplicationInsights.xml
+G:\Maksim.Hladki\test\CT\sample\TelemetryClientSample\TelemetryClientSample\bin\Debug\Microsoft.VisualStudio.ApplicationInsights.Interfaces.xml
+G:\Maksim.Hladki\test\CT\sample\TelemetryClientSample\TelemetryClientSample\bin\Debug\Microsoft.VisualStudio.Shell.Interop.xml
+G:\Maksim.Hladki\test\CT\sample\TelemetryClientSample\TelemetryClientSample\bin\Debug\Microsoft.VisualStudio.Shell.Immutable.10.0.xml
+G:\Maksim.Hladki\test\CT\sample\TelemetryClientSample\TelemetryClientSample\bin\Debug\Microsoft.VisualStudio.OLE.Interop.xml
+G:\Maksim.Hladki\test\CT\sample\TelemetryClientSample\TelemetryClientSample\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.xml
+G:\Maksim.Hladki\test\CT\sample\TelemetryClientSample\TelemetryClientSample\obj\Debug\TelemetryClientSample.csprojResolveAssemblyReference.cache
