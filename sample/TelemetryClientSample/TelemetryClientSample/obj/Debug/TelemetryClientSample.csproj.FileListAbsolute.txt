@@ -34,3 +34,13 @@ G:\Maksim.Hladki\test\CT\sample\TelemetryClientSample\TelemetryClientSample\bin\
 G:\Maksim.Hladki\test\CT\sample\TelemetryClientSample\TelemetryClientSample\bin\Debug\Microsoft.VisualStudio.OLE.Interop.xml
 G:\Maksim.Hladki\test\CT\sample\TelemetryClientSample\TelemetryClientSample\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.xml
 G:\Maksim.Hladki\test\CT\sample\TelemetryClientSample\TelemetryClientSample\obj\Debug\TelemetryClientSample.csprojResolveAssemblyReference.cache
+C:\Projects\CT\sample\TelemetryClientSample\TelemetryClientSample\bin\Debug\TelemetryClientSample.exe.config
+C:\Projects\CT\sample\TelemetryClientSample\TelemetryClientSample\obj\Debug\TelemetryClientSample.exe
+C:\Projects\CT\sample\TelemetryClientSample\TelemetryClientSample\obj\Debug\TelemetryClientSample.pdb
+C:\Projects\CT\sample\TelemetryClientSample\TelemetryClientSample\bin\Debug\TelemetryClientSample.exe
+C:\Projects\CT\sample\TelemetryClientSample\TelemetryClientSample\bin\Debug\TelemetryClientSample.pdb
+C:\Projects\CT\sample\TelemetryClientSample\TelemetryClientSample\bin\Debug\Microsoft.ApplicationInsights.dll
+C:\Projects\CT\sample\TelemetryClientSample\TelemetryClientSample\bin\Debug\Microsoft.VisualStudio.ApplicationInsights.Interfaces.dll
+C:\Projects\CT\sample\TelemetryClientSample\TelemetryClientSample\bin\Debug\Microsoft.ApplicationInsights.xml
+C:\Projects\CT\sample\TelemetryClientSample\TelemetryClientSample\bin\Debug\Microsoft.VisualStudio.ApplicationInsights.Interfaces.xml
+C:\Projects\CT\sample\TelemetryClientSample\TelemetryClientSample\obj\Debug\TelemetryClientSample.csprojResolveAssemblyReference.cache

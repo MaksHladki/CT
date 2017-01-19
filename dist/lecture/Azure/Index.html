@@ -417,7 +417,34 @@
 				</section>
 			</section>
 			<section>
+				<h1>Microsoft Message Queue</h1>
+			</section>
+			<section>
+				<h1>Azure Service Bus</h1>
+			</section>
+			<section>
 				<h1>Application Insights</h1>
+			</section>
+			<section>
+				<section>
+					<h2>Настройка App Insights</h2>
+				</section>
+				<section>
+					<h3>Добавление новой службы</h3>
+					<img src="img/IN_1.png" alt="">
+				</section>
+				<section>
+					<h3>Настройка параметров</h3>
+					<img src="img/IN_2.png" alt="">
+				</section>
+				<section>
+					<h3>Результат настройки</h3>
+					<img src="img/IN_3.png" alt="">
+				</section>
+				<section>
+					<h3>Панель управления</h3>
+					<img src="img/IN_4.png" alt="">
+				</section>
 			</section>
 			<section>
 				<h2>Интерфейс ITelemetry</h2>
@@ -645,7 +672,7 @@ public sealed class PageViewTelemetry :
 					</pre>
 				</section>
 				<section>
-					<h2>Метод TrackEvent</h2>
+					<h3>Метод TrackEvent</h3>
 					<blockquote>
 						Позволяет логировать вызовы событий в приложении для определения частотности выбора пользователем определенной функции, цели
 						и т.д.
@@ -726,7 +753,7 @@ public sealed class RequestTelemetry :
 					</pre>
 				</section>
 				<section>
-					<h2>Метод TrackMetric</h2>
+					<h3>Метод TrackMetric</h3>
 					<blockquote>
 						Используется для отправки метрик, которые не привязаны к конкретным событиям. Метрики отображаются в виде статистических
 						графиков, но в отличие от событий, можно выполнить диагностический поиск по отдельным значениям
@@ -854,8 +881,6 @@ public class ApplicationInsight
 
     public void TrackException(Exception ex){/**/}
 
-    public void TrackEvent(string eventName, Dictionary<string, string> options = null){/**/}
-
     public void TrackMetric(string metricName, int value){/**/}
 
     public void TrackTrace(string eventName, int number){/**/}
@@ -941,6 +966,10 @@ static void Main(string[] args)
 }							
 						</code>
 					</pre>
+				</section>
+				<section>
+					<h3>Результаты в Azure</h3>
+					<img src="img/IN_5.png" alt="">
 				</section>
 			</section>
 			<section>
