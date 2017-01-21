@@ -1441,6 +1441,376 @@ requests
 			</section>
 			<!-- -->
 			<section>
+				<h1>Microsoft Message Queue</h1>
+			</section>
+			<section>
+				<h2>Определение от Microsoft</h2>
+				<blockquote>
+					Технология предоставляет приложениям, выполняющимся в разное время, возможность обмениваться информацией, не принимая во
+					внимание гетерогенность сетей и операционных систем, которые могут быть временно недоступны. MSMQ обеспечивает гарантированную
+					доставку сообщений, эффективную маршрутизацию, безопасность и передачу сообщений на основе приоритетов. Служба может
+					использоваться в программных решениях, основанных на асинхронном и синхронном способе доставки сообщений
+				</blockquote>
+			</section>
+			<section>
+				<h2>История развития</h2>
+				<ul>
+					<li>Version 1.0 (May 1997). Supports Windows 95, Windows NT 4.0 SP3, Windows 98 and Windows Me.</li>
+					<li>Version 2.0, included with Windows 2000. New features include:[4] Support for registering public message queues in Active
+						Directory, 128-bit encryption and digital certificate support, full COM support for message properties (achieving functional
+						parity with the Win32 API function calls, full DNS path name support, improved performance in multi-threaded applications.</li>
+					<li>Version 3.0, included with Windows XP (Professional, not Home Edition) and Windows Server 2003. New features include:[5]
+						Internet Messaging (referencing queues via HTTP, SOAP-formatted messages, MSMQ support for Internet Information Services),
+						queue aliases, multicasting of messages, and additional support for programmatic maintenance and administration of
+						queues and MSMQ itself.</li>
+					<li>Version 4.0, part of Windows Vista and Windows Server 2008. New features include:[6] Subqueues,[7] improved support
+						for "poison messages" (messages which continually fail to be processed correctly by the receiver), and support for
+						transactional receives of messages from a remote queue.</li>
+					<li>Version 5.0, part of Windows 7 and Windows Server 2008 R2. New features include:[8] support for Secure Hash Algorithm
+						2.0 (SHA2) and all advanced hash algorithms that are supported in Windows 2008 R2; by default, weaker hash algorithms
+						are disabled.</li>
+					<li>Version 6.0, part of Windows 8 and Windows Server 2012.</li>
+					<li>Version 10, part of Windows 8.1 and Windows Server 2012 R2.</li>
+				</ul>
+			</section>
+			<section>
+				<section>
+					<h2>Функциональные возможности</h2>
+					<ul>
+						<li>Сообщения могут пересылаться в автономной среде. То есть приложению-отправителю и приложению-получателю вовсе не обязательно
+							выполняться в одно и то же время.</li>
+						<li>В экспресс-режиме сообщения могут пересылаться очень быстро. В экспресс-режиме сообщения просто сохраняются в памяти.</li>
+						<li>Для механизма восстановления сообщения могут отправляться с гарантированной доставкой. Такие сообщения сохраняются
+							в файлах и доставляются даже в случае перезагрузки сервера.</li>
+						<li>Очереди сообщений могут защищаться с применением списков контроля доступа и указания в них, каким пользователям разрешено
+							отправлять или получать сообщения из очереди. Кроме того, сообщения могут шифроваться для исключения вероятности их
+							прочтения с помощью сетевых анализаторов пакетов, а также снабжаться приоритетами, чтобы те из них, которые имеют
+							более высокий приоритет, обрабатывались быстрее.</li>
+					</ul>
+				</section>
+				<section>
+					<ul>
+						<li>В Message Queuing 3.0 поддерживается возможность отправки многоадресных (multicast) сообщений.</li>
+						<li>В Message Queuing 4.0 поддерживается возможность распознавания вредоносных сообщений. Для таких сообщений может быть
+							определена специальная очередь.</li>
+						<li>В Message Queuing 5.0 поддерживаются более безопасные алгоритмы аутентификации, и может обрабатываться большее количество
+							очередей. (В Message Queuing 4.0 при обработке нескольких тысяч очередей начинали возникать проблемы с производительностью.)</li>
+						<li>Привязана к ядру операциооеной системы </li>
+					</ul>
+				</section>
+			</section>
+			<section>
+				<h2>Порты по умолчанию</h2>
+				<ul>
+					<li>TCP: 1801</li>
+					<li>RPC: 135, 2101, 2103, 2105</li>
+					<li>UDP: 3527, 1801</li>
+				</ul>
+			</section>
+			<section>
+				<h2>Продукты Message Queuing</h2>
+				<ul>
+					<li>Microsoft Message Queue (MSMQ) Server Core - Основные компоненты сервера очереди сообщений (MSMQ), которые необходимы
+						для получения базовой функциональности Message Queuing.</li>
+					<li>Active Directory Domain Services Integration - Интеграция MSMQ доменных служб Active Directory. Это средство позволяет
+						записывать имена очередей сообщений в Active Directory. С помощью этой опции можно находить очереди в Active Directory
+						и защищать их на основе пользователей и групп пользователей Windows.</li>
+					<li>MSMQ HTTP Support - Поддержка протокола HTTP MSMQ. Поддержка MSMQ HTTP позволяет отправлять и принимать сообщения, используя
+						протокол HTTP.</li>
+					<li>Triggers - помощью триггеров создаются экземпляры приложений при поступлении нового сообщения.</li>
+					<li>Multicast Support - Поддержка многоадресной рассылки. Позволяет отправлять сообщения группам серверов.</li>
+					<li>MSMQ DCOM Proxy - С помощью DCOM-прокси система может подключаться к удаленному серверу, используя API-интерфейс DCOM.</li>
+				</ul>
+			</section>
+			<section>
+				<section>
+					<h2>Настройка MSMQ</h2>
+				</section>
+				<section>
+					<h2>Включение или отключение компонентов</h2>
+					<img src="img/MSMQ_1.png" alt="">
+				</section>
+				<section>
+					<h3>Службы</h3>
+					<img src="img/MSMQ_2.png" alt="">
+				</section>
+				<section>
+					<h3>Панель упраления</h3>
+					<img src="img/MSMQ_3.png" alt="">
+				</section>
+			</section>
+			<section>
+				<section>
+					<h2>Типы очередей</h2>
+					<ul>
+						<li>Общедоступная очередь (public) - публикуется в Active Directory. Можно обращаться, не зная имени компьютера, на котором
+							она расположена</li>
+						<li>Частные очереди (private) - не публикуются в Active Directory. Доступны, только когда известны их полные путевые имена</li>
+						<li>Журнальные очереди (journal) - служат для хранения копий сообщений после того, как они были получены или отправлены</li>
+						<li>Очереди мертвых писем (dead-letter) - хранят сообщения, если они не появляются на целевой системе по истечении определенного
+							периода времени</li>
+						<li>Административные очереди - содержат подтверждения об успешно отправленных сообщениях</li>
+						<li>Очередь ответов - применяется, когда требуется особый вариант подстверждения о факте отправки со стороны получателя.
+							Принимающее приложение может посылать ответные сообщения обратно исходному отправителю</li>
+						<li>Очередь отчетов - используется для тестовых сообщений (тестирование и отслеживание маршрутов)</li>
+						<li>Системные очереди - являются частными и используются самой системой MQ для административных сообщений, хранения уведомлений
+							и обеспечения правильного порядка доставки транзакционных сообщений</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Создание очереди</h3>
+					<img src="img/MSMQ_5.png" alt="">
+				</section>
+			</section>
+			<section>
+				<h2>Структура сообщения</h2>
+				<ul>
+					<li>Метка — заголовок сообщения</li>
+					<li>Тело - пересылаемые данные</li>
+					<li>Дополнительная информация - отправитель, конфигурация таймаута, идентификатор транзакции, приоритет</li>
+				</ul>
+			</section>
+			<section>
+				<h2>Типы сообщений</h2>
+				<ul>
+					<li>Нормальное сообщение - отправляется любым приложением</li>
+					<li>Подтверждающее сообщение - уведомляет о состоянии нормального сообщения. Подтверждающие сообщения отправляются в административные
+						очереди, чтобы уведомить об успехе или сбое при отправке нормальных сообщений</li>
+					<li>Ответные сообщения - отправляются принимающим приложением, когда исходный отправитель требует некоторого специального
+						ответа
+					</li>
+					<li>Отчетные сообщения - генерируются системой Message Queuing. К этой категории относятся тестовые сообщения и сообщения
+						отслеживания маршрутизации</li>
+				</ul>
+			</section>
+			<section>
+				<section>
+					<h2>Совойства сообщения</h2>
+					<ul>
+						<li>Label — имя очереди, которое используется для ее поиска</li>
+						<li>Type ID - используется для отображения множественных очередей на единственную категорию типа (по умолчанию {00000000-0000-0000-0000-000000000000})</li>
+						<li>Authenticated - позволяет записывать и читать сообщения в очереди только аутентифицированным пользователям</li>
+						<li>Privacy Level - позволяет шифровать содержимое сообщения. Значения: None, Optional или Body</li>
+						<li>Journal - обеспечивается сохранение в журнале копий принятых сообщений</li>
+						<li>Multicast - оппределяет групповой IP-адрес для очереди</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Пример интерфейса</h3>
+					<img src="img/MSMQ_4.png" alt="">
+				</section>
+			</section>
+			<section>
+				<section>
+					<h2>Класс MessageQueue</h2>
+				</section>
+				<section>
+					<h3>Основные методы</h3>
+					<table>
+						<tr>
+							<td>Create</td>
+							<td>создает очередь по определенному пути</td>
+						</tr>
+						<tr>
+							<td>GetPrivateQueuesByMachine</td>
+							<td>нахождение приватных очередей по путевому либо форматному имени</td>
+						</tr>
+						<tr>
+							<td>Exists</td>
+							<td>проверка существования очереди</td>
+						</tr>
+						<tr>
+							<td>Delete</td>
+							<td>удаление очереди</td>
+						</tr>
+						<tr>
+							<td>Send</td>
+							<td>отправка сообщение в очередь</td>
+						</tr>
+						<tr>
+							<td>Receive</td>
+							<td>извлекает певое сообщение из очереди</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+						</tr>
+					</table>
+				</section>
+				<section>
+					<h3>Метод Create</h3>
+					<pre>
+						<code class="hljs">
+public static MessageQueue Create(string path);
+public static MessageQueue Create(string path, bool transactional);
+						</code>
+					</pre>
+					<pre>
+						<code class="hljs">
+var queue = MessageQueue.Create(".\\private$\\MyNewPrivateQueue");
+						</code>
+					</pre>
+				</section>
+				<section>
+					<h3>Метод GetPrivateQueuesByMachine</h3>
+					<pre>
+						<code class="hljs">
+public static MessageQueue[] GetPrivateQueuesByMachine(string machineName);
+						</code>
+					</pre>
+					<pre>
+						<code class="hljs">
+foreach (var queue in MessageQueue.GetPrivateQueuesByMachine(Environment.MachineName))
+                Console.WriteLine("Очередь: {0}\n", queue.Path);
+						</code>
+					</pre>
+				</section>
+				<section>
+					<h3>Метод Exists</h3>
+					<pre>
+						<code class="hljs">
+public static bool Exists(string path);
+						</code>
+					</pre>
+					<pre>
+						<code class="hljs">
+var queueName = @".\private$\MyNewPrivateQueue";
+
+if (MessageQueue.Exists(queueName))
+{
+    var queue = new MessageQueue(queueName);
+}
+						</code>
+					</pre>
+				</section>
+				<section>
+					<h3>Метод Delete</h3>
+					<pre>
+						<code class="hljs">
+public static void Delete(string path);
+						</code>
+					</pre>
+					<pre>
+						<code class="hljs">
+var queueName = @".\private$\MyNewPrivateQueue";
+
+if (MessageQueue.Exists(queueName))
+{
+    MessageQueue.Delete(queueName);
+}
+						</code>
+					</pre>
+				</section>
+				<section>
+					<h3>Метод Send</h3>
+					<pre>
+						<code class="hljs">
+public void Send(object obj);
+public void Send(object obj, MessageQueueTransaction transaction);
+public void Send(object obj, MessageQueueTransactionType transactionType);
+public void Send(object obj, string label);
+public void Send(object obj, string label, MessageQueueTransactionType transactionType);
+						</code>
+					</pre>
+					<pre>
+						<code class="hljs">
+var queue = new MessageQueue(@".\private$\MyNewPrivateQueue");
+queue.Send("Sample Message", "Label");
+						</code>
+					</pre>
+				</section>
+				<section>
+					<h3>Класс</h3>
+					<pre>
+						<code class="hljs">
+    public class MessageQueueTransaction : IDisposable
+    {
+        public MessageQueueTransaction();
+        ~MessageQueueTransaction();
+        public MessageQueueTransactionStatus Status { get; }
+        public void Abort();
+        public void Begin();
+        public void Commit();
+        public void Dispose();
+        protected virtual void Dispose(bool disposing);
+    }
+						</code>
+					</pre>
+				</section>
+				<section>
+					<h3>Метод Receive</h3>
+					<pre>
+						<code class="hljs">
+public Message Receive();
+public Message Receive(MessageQueueTransactionType transactionType);
+public Message Receive(MessageQueueTransaction transaction);
+public Message Receive(TimeSpan timeout);
+public Message Receive(TimeSpan timeout, Cursor cursor);
+public Message Receive(TimeSpan timeout, MessageQueueTransactionType transactionType);
+public Message Receive(TimeSpan timeout, MessageQueueTransaction transaction);
+public Message Receive(TimeSpan timeout, Cursor cursor, MessageQueueTransactionType transactionType);
+public Message Receive(TimeSpan timeout, Cursor cursor, MessageQueueTransaction transaction);
+						</code>
+					</pre>
+					<pre>
+						<code class="hljs">
+var queue = new MessageQueue(@".\private$\MyNewPrivateQueue");
+var message = queue.Receive();				
+						</code>
+					</pre>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h2>Форматировщик сообщений</h2>
+				</section>
+				<section>
+					<h3>Типы формартировщиков</h3>
+					<ul>
+						<li>XmlMessageFormatter - форматировщик по умолчанию. Сериализует объекты, используя XML</li>
+						<li>BinaryMessageFormatter - Собщения сериализуются в двоичный формат. Эти сообщения короче, чем сформатированные с применением XML</li>
+						<li>ActiveXMessageFormatter - Двоичный форматировщик, так что сообщения могут быть прочитаны и записаны объектами COM. Используя этот форматировщик, можно записывать сообщения в очередь с помощью классов .NET и читать их оттуда объектами COM</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Пример</h3>
+					<pre>
+						<code class="hljs">
+var queue = new MessageQueue(@".\private$\MyNewPrivateQueue");
+queue.Formatter = new XmlMessageFormatter(
+      new String[] { "System.String" });
+Message message = queue.Receive();
+Console.WriteLine(message.Body);
+						</code>
+					</pre>
+					<pre>
+						<code class="hljs">
+var queue = new MessageQueue(@".\private$\MyNewPrivateQueue");
+      queue.Formatter = new BinaryMessageFormatter();
+
+foreach (Message message in queue)
+      Console.WriteLine(message.Body);
+						</code>
+					</pre>
+				</section>
+				<section>
+					<h3>Вид сообщения в системе</h3>
+					<img src="img/MSMQ_6.png" alt="">
+				</section>
+			</section>
+			<section>
 				<h1>Azure Service Bus</h1>
 			</section>
 			<section>
