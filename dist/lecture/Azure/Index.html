@@ -427,6 +427,105 @@
 				<h1>Azure Service Bus</h1>
 			</section>
 			<section>
+				<h2>Распространенные платформы виртуализации</h2>
+				<ul>
+					<li>VMWARE (ESX, Server)</li>
+					<li>CITRIX (Xen)</li>
+					<li>Sun xVM (Virtual box)</li>
+					<li>Microsoft (Hyper-V)</li>
+					<li>Parallels (Parallels)</li>
+					<li>Virtualiron (Virtualiron)</li>
+				</ul>
+			</section>
+			<section>
+				<h1>Hyper-V</h1>
+			</section>
+			<section>
+				<h2>История</h2>
+				<ol>
+					<li>2003 - Microsoft acquires Connectix</li>
+					<li>2004 - Miscrosoft Visrtual Server 2005</li>
+					<li>2205 - Microsoft Virtual Server 2005 R2</li>
+					<li>2008 - Microsoft Hyper-V Server 2008</li>
+					<li>2009 - Microsoft Hyper-V server 2008 R2</li>
+					<li>2011 - Microsoft Hyper-V server 2008 R2 SP1</li>
+					<li>2012 - Microsoft Hyper-V server 2012</li>
+				</ol>
+			</section>
+			<section>
+				<h2>Типы виртуальных машин</h2>
+				<ul>
+					<li>BIOS based architecture - Generation 0</li>
+					<li>EFI based architecture - Generation 1</li>
+				</ul>
+			</section>
+			<section>
+				<h2>Характеристики</h2>
+				<ul>
+					<lI>Масштабируемость, производительность и плотность</lI>
+					<lI></lI>
+					<lI></lI>
+					<lI></lI>
+					<lI></lI>
+				</ul>
+			</section>
+			<section>
+				<h2>Ключевые особенности хранилища</h2>
+				<ul>
+					<li>Поддержка Virtual Fiber Channel (доступ к Fiber Channel SAN из ВМ)</li>
+					<li>Нативная поддержка 4-КВ (преимущество от более емких и надежных дисков)</li>
+					<li>Размер Virtual Hard Disk до 64 ТВ</li>
+					<li>Offloaded Data Transfer (ODX) - повышает быстродействие используя SAN</li>
+				</ul>
+			</section>
+			<section>
+				<h2>Улучшенное управление ресурсами</h2>
+				<ul>
+					<li>Улучшение Dynamic Memory (более высокий уровень консолидации ВМ)</li>
+					<li>Resource Metering (лог истории использования ВМ)</li>
+					<li>QUality of Service (QoS) (позволяет обеспечить SLA по производительности ВМ)</li>
+					<li>Data Center Bridging (DCB) - объеденяет сетевой трафик для повышения QoS</li>
+					<li></li>
+				</ul>
+			</section>
+			<section>
+				<h2>Повышение уровня безопасности и изоляции</h2>
+				<ul>
+					<li>Private Virtual LAN</li>
+					<li>Защита от ARP Spoofing</li>
+					<li>DHCP Guard Protection</li>
+					<li>Virtual Port ACLs</li>
+					<li>Trunk Mode to Virtual Machine</li>
+					<li>Monitoring and Port Mirroroing</li>
+					<li>Windows PowerShell / WMI Managment</li>
+					<li>IPSec</li>
+					<li>SR-IOV</li>
+					<li>Dynamic Virtual Machine Queue</li>
+					<li>Extensible Switch - открытая платформа для созданий расширений с использованием Windows API</li>
+				</ul>
+			</section>
+			<section>
+				<h2>Физическая безопасность</h2>
+				<p>Bitloker encryption</p>
+				<ul>
+					<li>Шифрование локальных жестких дисков</li>
+					<li>Шифрование кластерных дисков</li>
+					<li>Шифрование Cluster Shared Volumes</li>
+					<li>Изменение Volume level encryption</li>
+					<li></li>
+				</ul>
+			</section>
+			<section>
+				<h2>Уровни миграции ВМ</h2>
+				<ul>
+					<li>Live Migration - бысрое, без ограничений </li>
+					<li>Live Storage Migration - Легкая и прозрачная миграция дисков</li>
+					<li>Shared-Nothing Live Migration -прозрачный перенос ВМ между узлами и кластерами</li>
+					<li></li>
+					<li></li>
+				</ul>
+			</section>
+			<section>
 				<h1>Application Insights</h1>
 			</section>
 			<section>
@@ -1523,6 +1622,14 @@ requests
 				</ul>
 			</section>
 			<section>
+				<h2>Схема работы</h2>
+				<img src="img/MSMQ_8.gif" alt="">
+			</section>
+			<section>
+				<h2>Схема работы</h2>
+				<img src="img/MSMQ_7.gif" alt="">
+			</section>
+			<section>
 				<section>
 					<h2>Настройка MSMQ</h2>
 				</section>
@@ -1632,20 +1739,20 @@ requests
 							<td>извлекает певое сообщение из очереди</td>
 						</tr>
 						<tr>
-							<td></td>
-							<td></td>
+							<td>GetAllMessages</td>
+							<td>получает все сообщения из очереди</td>
 						</tr>
 						<tr>
-							<td></td>
-							<td></td>
+							<td>Peek</td>
+							<td>получает сообщение из очереди, но не извлекает его</td>
 						</tr>
 						<tr>
-							<td></td>
-							<td></td>
+							<td>PeekById</td>
+							<td>получение сообщения из очереди по Id, но не извлекает его</td>
 						</tr>
 						<tr>
-							<td></td>
-							<td></td>
+							<td>Purge</td>
+							<td>удаляет все сообщения из очереди</td>
 						</tr>
 					</table>
 				</section>
@@ -1662,6 +1769,35 @@ public static MessageQueue Create(string path, bool transactional);
 var queue = MessageQueue.Create(".\\private$\\MyNewPrivateQueue");
 						</code>
 					</pre>
+				</section>
+				<section>
+					<h3>Имена каналов</h3>
+					<table>
+						<tr>
+							<td>Public</td>
+							<td>{Имя машины}\{Имя очереди}</td>
+						</tr>
+						<tr>
+							<td>Private</td>
+							<td>{Имя машины}\Private$\{Имя очереди}</td>
+						</tr>
+						<tr>
+							<td>Journal</td>
+							<td>{Имя машины}\{Имя очереди}\Journal$</td>
+						</tr>
+						<tr>
+							<td>Machine journal</td>
+							<td>{Имя машины}\Journal$</td>
+						</tr>
+						<tr>
+							<td>Machine dead-letter</td>
+							<td>{Имя машины}\Deadletter$</td>
+						</tr>
+						<tr>
+							<td>Machine transactional dead-letter</td>
+							<td>{Имя машины}\XactDeadletter$</td>
+						</tr>
+					</table>
 				</section>
 				<section>
 					<h3>Метод GetPrivateQueuesByMachine</h3>
@@ -1686,7 +1822,7 @@ public static bool Exists(string path);
 					</pre>
 					<pre>
 						<code class="hljs">
-var queueName = @".\private$\MyNewPrivateQueue";
+var queueName = @".\private$\MyPrivateQueue";
 
 if (MessageQueue.Exists(queueName))
 {
@@ -1704,7 +1840,7 @@ public static void Delete(string path);
 					</pre>
 					<pre>
 						<code class="hljs">
-var queueName = @".\private$\MyNewPrivateQueue";
+var queueName = @".\private$\MyPrivateQueue";
 
 if (MessageQueue.Exists(queueName))
 {
@@ -1726,7 +1862,7 @@ public void Send(object obj, string label, MessageQueueTransactionType transacti
 					</pre>
 					<pre>
 						<code class="hljs">
-var queue = new MessageQueue(@".\private$\MyNewPrivateQueue");
+var queue = new MessageQueue(@".\private$\MyPrivateQueue");
 queue.Send("Sample Message", "Label");
 						</code>
 					</pre>
@@ -1766,13 +1902,172 @@ public Message Receive(TimeSpan timeout, Cursor cursor, MessageQueueTransaction 
 					</pre>
 					<pre>
 						<code class="hljs">
-var queue = new MessageQueue(@".\private$\MyNewPrivateQueue");
+var queue = new MessageQueue(@".\private$\MyPrivateQueue");
 var message = queue.Receive();				
+						</code>
+					</pre>
+				</section>
+				<section>
+					<h3>Метод GetAllMessages</h3>
+					<pre>
+						<code class="hljs">
+public Message[] GetAllMessages();
+						</code>
+					</pre>
+					<pre>
+						<code class="hljs">
+var queue = new MessageQueue(@".\private$\MyPrivateQueue");
+var messages = queue.GetAllMessages();
+						</code>
+					</pre>
+				</section>
+				<section>
+					<h3>Метод Peek</h3>
+					<pre>
+						<code class="hljs">
+        public Message Peek();
+        public Message Peek(TimeSpan timeout);
+        public Message Peek(TimeSpan timeout, Cursor cursor, PeekAction action);
+						</code>
+					</pre>
+				</section>
+				<section>
+					<h3>Метод PeekById</h3>
+					<pre>
+						<code class="hljs">
+public Message PeekById(string id);
+public Message PeekById(string id, TimeSpan timeout);
+						</code>
+					</pre>
+					<pre>
+						<code class="hljs">
+var queue = new MessageQueue(@".\private$\MyPrivateQueue");
+var message = queue.PeekById("035e0464-4ed2-434d-95ce-f7ab1b2c8ff6\12");
+						</code>
+					</pre>
+				</section>
+				<section>
+					<h3>Метод Purge</h3>
+					<pre>
+						<code class="hljs">
+public void Purge();
 						</code>
 					</pre>
 				</section>
 			</section>
 			<section>
+				<section>
+					<h2>Класс Message</h2>
+				</section>
+				<section>
+					<h3>Основыне совйства</h3>
+					<table>
+						<tr>
+							<td>ArrivedTime (DateTime)</td>
+							<td>время прибытия в очередь назначения</td>
+						</tr>
+						<tr>
+							<td>Authenticated (bool)</td>
+							<td>проверяет, аутентифицировано ли сообщение (только геттер)</td>
+						</tr>
+						<tr>
+							<td>Body (object)</td>
+							<td>тело сообщения</td>
+						</tr>
+						<tr>
+							<td>BodyStream (stream)</td>
+							<td>установка/получения тела сообщения через поток</td>
+						</tr>
+						<tr>
+							<td>Formatter (IMessageFormatter)</td>
+							<td>форматтер для сериализации/десериализации сообщения</td>
+						</tr>
+						<tr>
+							<td>HashAlgorithm (HashAlgorithm)</td>
+							<td>алгоритм для аутентификации</td>
+						</tr>
+						<tr>
+							<td>Id (string)</td>
+							<td>идентификатор сообщения в очереди (только геттер)</td>
+						</tr>
+						<tr>
+							<td>Label (string)</td>
+							<td>заголовок сообщения</td>
+						</tr>
+						<tr>
+							<td>MessageType (MessageType)</td>
+							<td>тип сообщения (Acknowledgment, Normal, Report)</td>
+						</tr>
+						<tr>
+							<td>Priority (MessagePriority)</td>
+							<td>приоритет сообщения</td>
+						</tr>
+						<tr>
+							<td>SentTime (DateTime)</td>
+							<td>время отправки</td>
+						</tr>
+						<tr>
+							<td>TransactionId (string)</td>
+							<td>идентификатор транзакции</td>
+						</tr>
+					</table>
+				</section>
+				<section>
+					<h3>Приоритет сообщения</h3>
+					<pre>
+						<code class="hljs">
+    public enum MessagePriority
+    {
+        Lowest = 0,
+        VeryLow = 1,
+        Low = 2,
+        Normal = 3,
+        AboveNormal = 4,
+        High = 5,
+        VeryHigh = 6,
+        Highest = 7
+    }
+						</code>
+					</pre>
+				</section>
+				<section>
+					<h3>Пример 1</h3>
+					<pre>
+						<code class="hljs">
+
+				// Create a new bitmap.
+				// The file must be in the \bin\debug or \bin\retail folder, or
+				// you must give a full path to its location.
+				Image myImage = Bitmap.FromFile("SentImage.bmp");
+
+				// Connect to a queue on the local computer.
+				MessageQueue myQueue = new MessageQueue(".\\myQueue");
+
+				Message myMessage = new Message(myImage, new BinaryMessageFormatter());
+
+				// Send the image to the queue.
+				myQueue.Send(myMessage);
+						</code>
+					</pre>
+				</section>
+				<section>
+					<h3>Пример 2</h3>
+					<pre>
+						<code class="hljs">
+MessageQueue myQueue = new MessageQueue(".\\myQueue");
+
+				// Set the formatter to indicate body contains an Order.
+				myQueue.Formatter = new BinaryMessageFormatter();
+
+				// Receive and format the message. 
+				System.Messaging.Message myMessage = myQueue.Receive(); 
+				Bitmap myImage = (Bitmap)myMessage.Body;
+
+				// This will be saved in the \bin\debug or \bin\retail folder.
+				myImage.Save("ReceivedImage.bmp",System.Drawing.Imaging.ImageFormat.Bmp);
+						</code>
+					</pre>
+				</section>
 				<section>
 					<h2>Форматировщик сообщений</h2>
 				</section>
@@ -1780,15 +2075,20 @@ var message = queue.Receive();
 					<h3>Типы формартировщиков</h3>
 					<ul>
 						<li>XmlMessageFormatter - форматировщик по умолчанию. Сериализует объекты, используя XML</li>
-						<li>BinaryMessageFormatter - Собщения сериализуются в двоичный формат. Эти сообщения короче, чем сформатированные с применением XML</li>
-						<li>ActiveXMessageFormatter - Двоичный форматировщик, так что сообщения могут быть прочитаны и записаны объектами COM. Используя этот форматировщик, можно записывать сообщения в очередь с помощью классов .NET и читать их оттуда объектами COM</li>
+						<li>BinaryMessageFormatter - Собщения сериализуются в двоичный формат. Эти сообщения короче, чем сформатированные с применением
+							XML
+						</li>
+						<li>ActiveXMessageFormatter - Двоичный форматировщик, так что сообщения могут быть прочитаны и записаны объектами COM.
+							Используя этот форматировщик, можно записывать сообщения в очередь с помощью классов .NET и читать их оттуда объектами
+							COM
+						</li>
 					</ul>
 				</section>
 				<section>
 					<h3>Пример</h3>
 					<pre>
 						<code class="hljs">
-var queue = new MessageQueue(@".\private$\MyNewPrivateQueue");
+var queue = new MessageQueue(@".\private$\MyPrivateQueue");
 queue.Formatter = new XmlMessageFormatter(
       new String[] { "System.String" });
 Message message = queue.Receive();
@@ -1797,7 +2097,7 @@ Console.WriteLine(message.Body);
 					</pre>
 					<pre>
 						<code class="hljs">
-var queue = new MessageQueue(@".\private$\MyNewPrivateQueue");
+var queue = new MessageQueue(@".\private$\MyPrivateQueue");
       queue.Formatter = new BinaryMessageFormatter();
 
 foreach (Message message in queue)
@@ -1808,6 +2108,58 @@ foreach (Message message in queue)
 				<section>
 					<h3>Вид сообщения в системе</h3>
 					<img src="img/MSMQ_6.png" alt="">
+				</section>
+			</section>
+			<section>
+				<section>
+					<h2>Использование транзакций</h2>
+				</section>
+				<section>
+					<h3>Класс MessageQueueTransaction</h3>
+					<pre>
+						<code class="hljs">
+    public class MessageQueueTransaction : IDisposable
+    {
+        public MessageQueueTransaction();
+        ~MessageQueueTransaction();
+        public MessageQueueTransactionStatus Status { get; }
+        public void Abort();
+
+        public void Begin();
+
+        public void Commit();
+        public void Dispose();
+
+        protected virtual void Dispose(bool disposing);
+    }
+						</code>
+					</pre>
+				</section>
+				<section>
+					<h3>Пример</h3>
+					<pre>
+						<code class="hljs">
+MessageQueue queue = new MessageQueue(@".\private$\MyPrivateQueue");
+Message msg = new Message("Example Message Body");
+MessageQueueTransaction transaction = new MessageQueueTransaction();
+
+try
+{
+    transaction.Begin();
+    queue.Send(msg, "Example Message Label", transaction);
+    transaction.Commit();
+}
+catch(System.Exception e)
+{
+    transaction.Abort();
+    throw e;
+}
+finally
+{
+    transaction.Dispose();
+}
+						</code>
+					</pre>
 				</section>
 			</section>
 			<section>
