@@ -26,7 +26,7 @@ const gulp = require('gulp'),
 const srcPath = {
     'src': './src',
     'html': './src/**/*.html',
-    'img': './src/**/*.+(jpg|png|svg)',
+    'img': './src/**/*.+(jpg|jpeg|png|svg)',
     'css': ['./src/!(css|js)*/**/*.css'],
     'cssLint': './src/**/*.css',
     'js': './src/!(js)*/**/*.js',
