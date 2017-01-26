@@ -33,7 +33,7 @@ const srcPath = {
     'jsLint': ['./src/**/*.js', '!./src/**/*.min.js'],
     'font': './src/font/**/*.*',
     'task': './src/task/**/*.pdf',
-    'analysis': './src/code-analysis/',
+    'analysis': './code-analysis/',
 };
 
 const distPath = {
