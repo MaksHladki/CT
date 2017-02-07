@@ -71,6 +71,7 @@ gulp.task('clean', () => {
 
 gulp.task('html', () => {
     return gulp.src(srcPath.html)
+        .pipe(newer(distPath.html))
         .pipe(useref({}, pipe(sourcemaps.init)))
         .pipe(gulpif('*.js', pipe(
             uglify()
