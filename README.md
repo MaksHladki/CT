@@ -7,3 +7,9 @@
 Обзор парадигмы облачных вычислений. Архитектура облачных систем. Модели развертывания облаков: частное облако, публичное облако, гибридное облако, общественное облако. Модели предоставления услуг облачных вычислений: Software as a Service (SaaS), Platform as a Service (PaaS), Infrastructure as a Service (IaaS). Основные преимущества и недостатки моделей облачных вычислений и предлагаемых на их основе решений.  
 [Лекция](https://makshladki.github.io/CT/dist/lecture/Introduction/index.html "Лекция")  
 [Задание](https://makshladki.github.io/CT/dist/task/Introduction/Introduction.pdf "Задание")  
+
+
+##Тема 2. Платформы виртуализации
+Основные типы виртуализации. Обзор программных продуктов крупней-ших компаний виртуализации. Виртуальная машина. Виртуализация серверов. Виртуализация приложений. Виртуализация представлений. Системы виртуали-зации Hyper-V и VMware. Разновидности архитектуры гипервизора.  
+[Лекция](https://makshladki.github.io/CT/dist/lecture/Virtualization/index.html "Лекция")  
+[Задание](https://makshladki.github.io/CT/dist/task/Virtualization/Virtualization.pdf "Задание")  
