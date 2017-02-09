@@ -1049,7 +1049,7 @@ https://api.dropboxapi.com/1/account/info
 }
 						</code>
 					</pre>
-						<table>
+					<table>
 						<tr>
 							<td>Authorization</td>
 							<td>Bearer OlhaH8T4wSAAAAAAAAAKrU5PxOT4QF1ZhgHdkUyXcYyeU45fiZtpBtqKWcElqMBX</td>
@@ -1067,6 +1067,294 @@ https://api.dropboxapi.com/1/account/info
     "to_path": "/DROPBOX_API/Test2/Hello.txt",
     "allow_shared_folder": false,
     "autorename": false
+}
+						</code>
+					</pre>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h2>Метод files/create_folder</h2>
+				</section>
+				<section>
+					<pre>
+						<code class="hljs">	
+							{
+  "name": "Test3",
+  "path_lower": "/dropbox_api/test3",
+  "path_display": "/DROPBOX_API/Test3",
+  "id": "id:7yM4SdXIcWUAAAAAAAA6QQ"
+}
+						</code>
+					</pre>
+				</section>
+				<table>
+					<tr>
+						<td>Content-Type</td>
+						<td>application/json</td>
+					</tr>
+					<tr>
+						<td>Authorization</td>
+						<td>Bearer OlhaH8T4wSAAAAAAAAAKrU5PxOT4QF1ZhgHdkUyXcYyeU45fiZtpBtqKWcElqMBX</td>
+					</tr>
+				</table>
+				<p>Body</p>
+				<pre>
+					<code class="hljs">
+{
+    "path": "/DROPBOX_API/Test3",
+    "autorename": false
+}
+					</code>
+				</pre>
+			</section>
+			<section>
+				<section>
+					<h2>/files/delete</h2>
+				</section>
+				<section>
+					<pre>
+						<code class="hljs">
+{
+  ".tag": "folder",
+  "name": "Test1",
+  "path_lower": "/dropbox_api/test1",
+  "path_display": "/DROPBOX_API/Test1",
+  "id": "id:7yM4SdXIcWUAAAAAAAA6OA"
+}
+						</code>
+					</pre>
+					<table>
+						<tr>
+							<td>Content-Type</td>
+							<td>application/json</td>
+						</tr>
+						<tr>
+							<td>Authorization</td>
+							<td>Bearer OlhaH8T4wSAAAAAAAAAKrU5PxOT4QF1ZhgHdkUyXcYyeU45fiZtpBtqKWcElqMBX</td>
+						</tr>
+					</table>
+					<p>body</p>
+					<pre>
+						<code class="hljs">
+							{
+    "path": "/DROPBOX_API/Test1"
+}
+						</code>
+					</pre>
+				</section>
+				<section>
+					<pre>
+						<code class="hljs">
+							{
+    "path": "/DROPBOX_API/Test1/Hello.txt"
+}
+						</code>
+					</pre>
+					<pre>
+						<code class="hljs">
+							{
+  ".tag": "file",
+  "name": "Hello.txt",
+  "path_lower": "/dropbox_api/test1/hello.txt",
+  "path_display": "/dropbox_api/Test1/Hello.txt",
+  "id": "id:7yM4SdXIcWUAAAAAAAA6Qw",
+  "client_modified": "2017-02-09T07:29:05Z",
+  "server_modified": "2017-02-09T19:35:09Z",
+  "rev": "e12922995045",
+  "size": 10,
+  "content_hash": "b529610e864e4176d6b83e52237718da4ed1fe5dedff8ae3381df05343c7a059"
+}
+						</code>
+					</pre>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h3>https://content.dropboxapi.com/2/files/download</h3>
+				</section>
+				<section>
+					<pre>
+						<code class="hljs">
+							HelloWorld
+						</code>
+					</pre>
+					<table>
+						<tr>
+							<td>Authorization</td>
+							<td>Bearer OlhaH8T4wSAAAAAAAAAKrU5PxOT4QF1ZhgHdkUyXcYyeU45fiZtpBtqKWcElqMBX</td>
+						</tr>
+						<tr>
+							<td>Dropbox-API-Arg</td>
+							<td>{ "path": "/DROPBOX_API/Test1/Hello.txt" }</td>
+						</tr>
+					</table>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h2>files/get_metadata</h2>
+				</section>
+				<section>
+					<pre>
+						<code class="hljs">
+							{
+  ".tag": "file",
+  "name": "Hello.txt",
+  "path_lower": "/dropbox_api/test1/hello.txt",
+  "path_display": "/dropbox_api/Test1/Hello.txt",
+  "id": "id:7yM4SdXIcWUAAAAAAAA6RA",
+  "client_modified": "2017-02-09T07:29:05Z",
+  "server_modified": "2017-02-09T19:38:15Z",
+  "rev": "e12b22995045",
+  "size": 10,
+  "has_explicit_shared_members": false,
+  "content_hash": "b529610e864e4176d6b83e52237718da4ed1fe5dedff8ae3381df05343c7a059"
+}
+						</code>
+					</pre>
+					<table>
+						<tr>
+							<td>Content-Type</td>
+							<td>application/json</td>
+						</tr>
+						<tr>
+							<td>Authorization</td>
+							<td>Bearer OlhaH8T4wSAAAAAAAAAKrU5PxOT4QF1ZhgHdkUyXcYyeU45fiZtpBtqKWcElqMBX</td>
+						</tr>
+					</table>
+					<pre>
+						<code class="hljs">
+							{
+    "path": "/DROPBOX_API/Test1/hello.txt",
+    "include_media_info": true,
+    "include_deleted": true,
+    "include_has_explicit_shared_members": true
+}
+						</code>
+					</pre>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h2>https://api.dropboxapi.com/2/files/list_folder</h2>
+				</section>
+				<section>
+					<pre>
+						<code class="hljs">
+							{
+  "entries": [
+    {
+      ".tag": "folder",
+      "name": "Test2",
+      "path_lower": "/dropbox_api/test2",
+      "path_display": "/DROPBOX_API/Test2",
+      "id": "id:7yM4SdXIcWUAAAAAAAA6Pw"
+    },
+    {
+      ".tag": "folder",
+      "name": "Test3",
+      "path_lower": "/dropbox_api/test3",
+      "path_display": "/DROPBOX_API/Test3",
+      "id": "id:7yM4SdXIcWUAAAAAAAA6QQ"
+    },
+    {
+      ".tag": "folder",
+      "name": "Test1",
+      "path_lower": "/dropbox_api/test1",
+      "path_display": "/DROPBOX_API/Test1",
+      "id": "id:7yM4SdXIcWUAAAAAAAA6Qg"
+    }
+  ],
+  "cursor": "AAH6SBV8IjdvO3vxr6XANeye-QhLaStlw-RFDSPR3hKrTpYCullmW_0llQMwkjhXAzkNFL8WZU2rJZsqtJL89NmmlbxWZR2FFh9bM_HxWtXKzqNVyRRochEqS3ybm8tnLeNpKNov6ejDs23dCOr_nwDoO9YXN0uM72JoAvZI60LVug",
+  "has_more": false
+}
+						</code>
+					</pre>
+					<pre>
+						<code class="hljs">
+							{
+    "path": "/DROPBOX_API",
+    "recursive": false,
+    "include_media_info": true,
+    "include_deleted": false,
+    "include_has_explicit_shared_members": false
+}
+						</code>
+					</pre>
+					<table>
+						<tr>
+							<td>Authorization</td>
+							<td>Bearer OlhaH8T4wSAAAAAAAAAKrU5PxOT4QF1ZhgHdkUyXcYyeU45fiZtpBtqKWcElqMBX</td>
+						</tr>
+						<tr>
+							<td>Content-Type</td>
+							<td>application/json</td>
+						</tr>
+					</table>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h2>https://api.dropboxapi.com/2/files/move</h2>
+				</section>
+				<section>
+					<pre>
+						<code class="hljs">	
+							{
+    "from_path": "/DROPBOX_API/Test1",
+    "to_path": "/DROPBOX_API/Test4",
+    "allow_shared_folder": false,
+    "autorename": false
+}
+						</code>
+					</pre>
+					<pre>
+						<code class="hljs">
+							{
+  ".tag": "folder",
+  "name": "Test4",
+  "path_lower": "/dropbox_api/test4",
+  "path_display": "/DROPBOX_API/Test4",
+  "id": "id:7yM4SdXIcWUAAAAAAAA6Qg"
+}
+						</code>
+					</pre>
+					<table>
+						<tr>
+							<td>Authorization</td>
+							<td>Bearer OlhaH8T4wSAAAAAAAAAKrU5PxOT4QF1ZhgHdkUyXcYyeU45fiZtpBtqKWcElqMBX</td>
+						</tr>
+						<tr>
+							<td>Content-Type</td>
+							<td>application/json</td>
+						</tr>
+					</table>
+				</section>
+				<section>
+					<pre>
+						<code class="hljs">
+							{
+    "from_path": "/DROPBOX_API/Test1/hello.txt",
+    "to_path": "/DROPBOX_API/Test4/word.txt",
+    "allow_shared_folder": false,
+    "autorename": false
+}
+						</code>
+					</pre>
+					<pre>
+						<code class="hljs">
+							{
+  ".tag": "file",
+  "name": "word.txt",
+  "path_lower": "/dropbox_api/test4/word.txt",
+  "path_display": "/DROPBOX_API/Test4/word.txt",
+  "id": "id:7yM4SdXIcWUAAAAAAAA6RA",
+  "client_modified": "2017-02-09T07:29:05Z",
+  "server_modified": "2017-02-09T20:10:15Z",
+  "rev": "e13522995045",
+  "size": 10,
+  "content_hash": "b529610e864e4176d6b83e52237718da4ed1fe5dedff8ae3381df05343c7a059"
 }
 						</code>
 					</pre>
