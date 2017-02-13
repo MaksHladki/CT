@@ -620,27 +620,27 @@ e   h i   k   q r x y
 				<section>
 					<h3>OAuth 2.0</h3>
 					<blockquote>
-						Dropbox supports OAuth 2.0 for authorizing API requests. Find out more in our OAuth guide. Authorized requests to the API
-						should use an Authorization header with the value Bearer 'TOKEN', where 'TOKEN' is an access token obtained through
-						the OAuth flow.
+						OAuth — открытый протокол авторизации, который позволяет предоставить третьей стороне ограниченный доступ к защищённым ресурсам
+						пользователя без необходимости передавать ей (третьей стороне) логин и пароль
+					</blockquote>
+					<blockquote>
+						Для получения доступа к HTTP API необходимо добавить к запросу специальный заголовок Authorization со значением Bearer 'TOKEN'.
+						Где 'TOKEN' - токен доступа, полученный через OAuth flow
 					</blockquote>
 				</section>
 				<section>
 					<h3>Метод /oauth2/authorize (GET)</h3>
 					<blockquote>
-						This starts the OAuth 2.0 authorization flow. This isn't an API call—it's the web page that lets the user sign in to Dropbox
-						and authorize your app. After the user decides whether or not to authorize your app, they will be redirected to the
-						URI specified by redirect_uri.
-					</blockquote>
+						Данный метод является отправной точкой процесса авторизации по модели "authorization flow". После подтверждения прав сервер
+						dropbox передает управления приложению через параметр redirect_uri </blockquote>
 				</section>
 				<section>
-					<h3>Два способа</h3>
+					<h3>Два модели использования</h3>
 					<ul>
-						<li>The code flow returns a code via the redirect_uri callback which should then be converted into a bearer token using
-							the /oauth2/token call. This is the recommended flow for apps that are running on a server.</li>
-						<li>The token or implicit grant flow returns the bearer token via the redirect_uri callback, rather than requiring your
-							app to make a second call to a server. This is useful for pure client-side apps, such as mobile apps or JavaScript-based
-							apps.
+						<li>Code Flow - подходит для веб-приложений, перенаправляет на специальную страницу и запрашивае у пользователя права доступа.
+							После подтверждения прав пользователь получает access token</li>
+						<li>Token Flow - получает токен без подтверждения действий от пользователя. Для этого используется секретный ключ приложения,
+							Подходит для js-, мобильных-приложений
 						</li>
 					</ul>
 				</section>
@@ -658,49 +658,21 @@ e   h i   k   q r x y
 							<tr>
 								<td>response_type</td>
 								<td>String</td>
-								<td>The grant type requested, either token or code.</td>
+								<td>Тип модели: token flow или code flow</td>
 							</tr>
 							<tr>
-								<td>client_id </td>
+								<td>client_id</td>
 								<td>String</td>
-								<td>The app's key, found in the App Console.</td>
+								<td>Ключ приложения</td>
 							</tr>
 							<tr>
 								<td>redirect_uri</td>
 								<td>String?</td>
-								<td>Where to redirect the user after authorization has completed. This must be the exact URI registered in the App Console;
-									even 'localhost' must be listed if it is used for testing. All redirect URIs must be HTTPS except for localhost
-									URIs. A redirect URI is required for the token flow, but optional for the code flow. If the redirect URI is omitted,
-									the code will be presented directly to the user and they will be invited to enter the information in your app.</td>
+								<td>Определяет куда переноправить пользователя после успешной аторизации. URL должен быть зарегестрирован в App Console.Редирект
+									URI обязателен для token flow и опционален для модели сode flow</td>
 							</tr>
 							<tr>
-								<td>state </td>
-								<td>String?</td>
-								<td>Up to 500 bytes of arbitrary data that will be passed back to your redirect URI. This parameter should be used to
-									protect against cross-site request forgery (CSRF). See Sections 4.4.1.8 and 4.4.2.5 of the OAuth 2.0 threat model
-									spec.
-								</td>
-							</tr>
-							<tr>
-								<td>require_role </td>
-								<td>String?</td>
-								<td> If this parameter is specified, the user will be asked to authorize with a particular type of Dropbox account, either
-									work for a team account or personal for a personal account. Your app should still verify the type of Dropbox account
-									after authorization since the user could modify or remove the require_role parameter.</td>
-							</tr>
-							<tr>
-								<td>force_reapprove</td>
-								<td>Boolean?</td>
-								<td>Whether or not to force the user to approve the app again if they've already done so. If false (default), a user
-									who has already approved the application may be automatically redirected to the URI specified by redirect_uri. If
-									true, the user will not be automatically redirected and will have to approve the app again.</td>
-							</tr>
-							<tr>
-								<td>disable_signup</td>
-								<td>Boolean?</td>
-								<td>When true (default is false) users will not be able to sign up for a Dropbox account via the authorization page.
-									Instead, the authorization page will show a link to the Dropbox iOS app in the App Store. This is only intended
-									for use when necessary for compliance with App Store policies.</td>
+								<td colspan="3">Второстепенные параметры: state,require_role, disable_signup, force_reapprove</td>
 							</tr>
 						</tbody>
 					</table>
@@ -717,20 +689,22 @@ e   h i   k   q r x y
 						</thead>
 						<tbody>
 							<tr>
-								<td>code </td>
-								<td>String </td>
-								<td>The authorization code, which can be used to attain a bearer token by calling /oauth2/token.</td>
+								<td>code</td>
+								<td>String</td>
+								<td>Код авторизации, который может быть использован для получения bearer token, путем вызова /oauth2/token</td>
 							</tr>
 							<tr>
-								<td>state </td>
-								<td>String </td>
-								<td>The state content, if any, originally passed to /oauth2/authorize.</td>
+								<td>state</td>
+								<td>String</td>
+								<td>Состояние содержания, если оно использовалось в запросе</td>
 							</tr>
 						</tbody>
 					</table>
 					<pre>
 						<code class="hljs">
-[REDIRECT_URI]?code=[CODE]&state=[STATE]				
+[REDIRECT_URI]
+    ?code=[CODE]
+    &state=[STATE]				
 						</code>
 					</pre>
 				</section>
@@ -746,62 +720,81 @@ e   h i   k   q r x y
 						</thead>
 						<tbody>
 							<tr>
-								<td>access_token </td>
+								<td>access_token</td>
 								<td>String</td>
-								<td>A token which can be used to make calls to the Dropbox API.</td>
+								<td>Токен, используемый для доступа к Dropbox API</td>
 							</tr>
 							<tr>
 								<td>token_type</td>
-								<td>String </td>
-								<td>The type of token, which will always be bearer.</td>
+								<td>String</td>
+								<td>Тип токена, всегда используется bearer</td>
 							</tr>
 							<tr>
 								<td>account_id</td>
-								<td>String </td>
-								<td>A user's account identifier used by API v2.</td>
+								<td>String</td>
+								<td>Идентификатор аккаута пользователя</td>
 							</tr>
 							<tr>
 								<td>team_id </td>
 								<td>String</td>
-								<td>A team's identifier used by API v2.</td>
+								<td>Идентификатор команды, если используется</td>
 							</tr>
 							<tr>
-								<td>state </td>
-								<td>String </td>
-								<td>The state content, if any, originally passed to /oauth2/authorize.</td>
+								<td>state</td>
+								<td>String</td>
+								<td>Состояние содержания, если оно использовалось в запросе</td>
 							</tr>
 						</tbody>
 					</table>
 					<pre>
 						<code class="hljs">
-[REDIRECT_URI]#access_token=ABCDEFG&token_type=bearer&account_id=dbid%3AAAH4f99T0taONIb-OurWxbNQ6ywGRopQngc&uid=12345&state=[STATE]
+[REDIRECT_URI]
+    ?access_token=ABCDEFG
+    &token_type=bearer
+    &account_id=dbid%3AAAH4f99T0taONIb-OurWxbNQ6ywGRopQngc
+	&uid=12345
+	&state=[STATE]
 						</code>
 					</pre>
 				</section>
 			</section>
 			<section>
-				<h3>Приме</h3>
-				<pre>
-					<code class="hljs">
-https://www.dropbox.com/1/oauth2/authorize?client_id=y8xekb9h3e4s3s0&response_type=code
-					</code>
-				</pre>
-				<img src="img/DR_oauth_request.png" alt="">
+				<section>
+					<h3>Пример 1</h3>
+					<pre>
+						<code class="hljs">
+https://www.dropbox.com/1/oauth2/authorize
+    ?client_id=y8xekb9h3e4s3s0
+    &response_type=code
+						</code>
+					</pre>
+					<img src="img/DR_oauth_request.png" alt="">
+				</section>
+				<section>
+					<h3>Результат</h3>
+					<img src="img/DR_oauth_result.png" alt="">
+				</section>
 			</section>
 			<section>
-				<h3>Результат</h3>
-				<img src="img/DR_oauth_result.png" alt="">
-			</section>
-			<section>
-				<h3>Пример</h3>
+				<h3>Пример 2</h3>
 				<pre>
 					<code class="hljs">	
-https://api.dropbox.com/1/oauth2/token?grant_type=authorization_code&code=OlhaH8T4wSAAAAAAAAAKrNWzr4lA1EEkSq3anovDxkE&client_id=y8xekb9h3e4s3s0&client_secret=19azsp1hnf3mk82
+https://api.dropbox.com/1/oauth2/token
+    ?grant_type=authorization_code
+    &code=OlhaH8T4wSAAAAAAAAAKrNWzr4lA1EEkSq3anovDxkE
+    &client_id=y8xekb9h3e4s3s0
+    &client_secret=19azsp1hnf3mk82
 					</code>
 				</pre>
+				<p>Результат</p>
 				<pre>
 					<code class="hljs">
-{"access_token": "OlhaH8T4wSAAAAAAAAAKrU5PxOT4QF1ZhgHdkUyXcYyeU45fiZtpBtqKWcElqMBX", "token_type": "bearer", "uid": "286996508", "account_id": "dbid:AADPD-wy8PRAh3kxL3WKVH1yfeXeiwEMK8s"}
+{
+   "access_token": "OlhaH8T4wSAAAAAAAAAKrU5PxOT4QF1ZhgHdkUyXcYyeU45fiZtpBtqKWcElqMBX", 
+    "token_type": "bearer", 
+    "uid": "286996508", 
+    "account_id": "dbid:AADPD-wy8PRAh3kxL3WKVH1yfeXeiwEMK8s"
+}
 					</code>
 				</pre>
 			</section>
