@@ -1577,9 +1577,55 @@ HelloWorld
 			</section>
 			<section>
 				<section>
-					<h2>https://api.dropboxapi.com/2/files/search</h2>
+					<h2>Метод files/search (POST)</h2>
 				</section>
 				<section>
+					<h3>Определение</h3>
+					<blockquote>
+						Поиск по файлам и папкам
+					</blockquote>
+					<h3>ULR</h3>
+					<blockquote>
+						https://api.dropboxapi.com/2/files/search
+					</blockquote>
+				</section>
+				<section>
+					<h3>Заголовки</h3>
+					<table>
+						<thead>
+							<tr>
+								<th>Ключ</th>
+								<th>Значение</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Authorization</td>
+								<td>Bearer OlhaH8T4wSAAAA...</td>
+							</tr>
+							<tr>
+								<td>Content-Type</td>
+								<td>application/json</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+				<section>
+					<h3>Пример запроса</h3>
+					<pre>
+						<code class="hljs">
+{
+    "path": "",
+    "query": ".pptx",
+    "start": 0,
+    "max_results": 100,
+    "mode": "filename"
+}
+						</code>
+					</pre>
+				</section>
+				<section>
+					<h3>Пример ответа</h3>
 					<pre>
 						<code class="hljs">
 {
@@ -1693,42 +1739,90 @@ HelloWorld
 						</code>
 					</pre>
 				</section>
-				<section>
-					<pre>
-						<code class="hljs">
-							{
-    "path": "",
-    "query": ".pptx",
-    "start": 0,
-    "max_results": 100,
-    "mode": "filename"
-}
-						</code>
-					</pre>
-					<table>
-						<tr>
-							<td>Authorization</td>
-							<td>Bearer OlhaH8T4wSAAAAAAAAAKrU5PxOT4QF1ZhgHdkUyXcYyeU45fiZtpBtqKWcElqMBX</td>
-						</tr>
-						<tr>
-							<td>Content-Type</td>
-							<td>application/json</td>
-						</tr>
-					</table>
-				</section>
 			</section>
 			<section>
 				<section>
-					<h2>https://content.dropboxapi.com/2/files/upload</h2>
+					<h2>Метод files/upload (POST)</h2>
 				</section>
 				<section>
-					<p>Body</p>
+					<h3>Определение</h3>
+					<blockquote>
+						Загрузка файла в облачное хранилище
+					</blockquote>
+					<h3>ULR</h3>
+					<blockquote>
+						https://api.dropboxapi.com/2/files/search
+					</blockquote>
+				</section>
+				<section>
+					<h3>Заголовки</h3>
+					<table>
+						<thead>
+							<tr>
+								<th>Ключ</th>
+								<th>Значение</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Authorization</td>
+								<td>Bearer OlhaH8T4wSAAAA...</td>
+							</tr>
+							<tr>
+								<td>Content-Type</td>
+								<td>application/octet-stream</td>
+							</tr>
+							<tr>
+								<td colspan="2">Добавление файла</td>
+							</tr>
+							<tr>
+								<td>Dropbox-API-Arg</td>
+								<td>
+									<pre>
+									<code class="hljs" data-trim>
+{ 
+	"path": "/DROPBOX_API/Test4/lorem.txt", 
+	"mode": "add", 
+	"autorename": true, 
+	"mute": false 
+}
+									</code>
+								</pre>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">Перезапись файла</td>
+							</tr>
+							<tr>
+								<td>Dropbox-API-Arg</td>
+								<td>
+									<pre>
+									<code class="hljs" data-trim>
+{ 
+	"path": "/DROPBOX_API/Test4/lorem.txt", 
+	"mode": "overwrite", 
+	"autorename": true, 
+	"mute": false 
+}
+									</code>
+								</pre>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+				<section>
+					<h3>Пример добавления</h3>
+					<p>Тело запроса</p>
 					<pre>
 						<code class="hljs">
-							What is Lorem Ipsum?
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+What is Lorem Ipsum?
+Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
 						</code>
 					</pre>
+					<p>Ответ</p>
 					<pre>
 						<code class="hljs">
 {
@@ -1744,28 +1838,19 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 }
 						</code>
 					</pre>
-					<table>
-						<tr>
-							<td>Authorization</td>
-							<td>Bearer OlhaH8T4wSAAAAAAAAAKrU5PxOT4QF1ZhgHdkUyXcYyeU45fiZtpBtqKWcElqMBX</td>
-						</tr>
-						<tr>
-							<td>Content-Type</td>
-							<td>application/octet-stream</td>
-						</tr>
-						<tr>
-							<td>Dropbox-API-Arg</td>
-							<td>{ "path": "/DROPBOX_API/Test4/lorem.txt", "mode": "add", "autorename": true, "mute": false }</td>
-						</tr>
-					</table>
 				</section>
 				<section>
+					<h3>Пример перезаписи</h3>
+					<p>Тело запроса</p>
 					<pre>
 						<code class="hljs">
-							"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
-"There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain..."
+"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, 
+adipisci velit..."
+"There is no one who loves pain itself, who seeks after it and wants to have it, 
+simply because it is pain..."
 						</code>
 					</pre>
+					<p>Ответ</p>
 					<pre>
 						<code class="hljs">
 {
@@ -1781,30 +1866,60 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 }
 						</code>
 					</pre>
-					<table>
-						<tr>
-							<td>Authorization</td>
-							<td>Bearer OlhaH8T4wSAAAAAAAAAKrU5PxOT4QF1ZhgHdkUyXcYyeU45fiZtpBtqKWcElqMBX</td>
-						</tr>
-						<tr>
-							<td>Content-Type</td>
-							<td>application/octet-stream</td>
-						</tr>
-						<tr>
-							<td>Dropbox-API-Arg</td>
-							<td>{ "path": "/DROPBOX_API/Test4/lorem.txt", "mode": "overwrite", "autorename": true, "mute": false }</td>
-						</tr>
-					</table>
 				</section>
 			</section>
 			<section>
 				<section>
-					<h2>https://api.dropboxapi.com/2/sharing/create_shared_link_with_settings</h2>
+					<h2>Метод sharing/create_shared_link_with_settings (POST)</h2>
 				</section>
 				<section>
+					<h3>Определение</h3>
+					<blockquote>
+						"Расширивает" файл либо папку, используя дополнительные параметры
+					</blockquote>
+					<h3>ULR</h3>
+					<blockquote>
+						https://api.dropboxapi.com/2/sharing/create_shared_link_with_settings
+					</blockquote>
+				</section>
+				<section>
+					<h3>Заголовки</h3>
+					<table>
+						<thead>
+							<tr>
+								<th>Ключ</th>
+								<th>Значение</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Authorization</td>
+								<td>Bearer OlhaH8T4wSAAAA...</td>
+							</tr>
+							<tr>
+								<td>Content-Type</td>
+								<td>application/json</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+				<section>
+					<h3>Пример</h3>
+					<p>Тело запроса</p>
+					<pre>
+						<code class="hljs">
+{
+    "path": "/DROPBOX_API/Test4/lorem.txt",
+    "settings": {
+        "requested_visibility": "public"
+    }
+}
+						</code>
+					</pre>
+					<p>Ответ</p>
 					<pre>
 						<code class="hljs">	
-							{
+{
   ".tag": "file",
   "url": "https://www.dropbox.com/s/8arwubaeu9odavx/lorem.txt?dl=0",
   "id": "id:7yM4SdXIcWUAAAAAAAA6Rg",
@@ -1826,36 +1941,61 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 }
 						</code>
 					</pre>
-					<pre>
-						<code class="hljs">
-							{
-    "path": "/DROPBOX_API/Test4/lorem.txt",
-    "settings": {
-        "requested_visibility": "public"
-    }
-}
-						</code>
-					</pre>
-					<table>
-						<tr>
-							<td>Authorization</td>
-							<td>Bearer OlhaH8T4wSAAAAAAAAAKrU5PxOT4QF1ZhgHdkUyXcYyeU45fiZtpBtqKWcElqMBX</td>
-						</tr>
-						<tr>
-							<td>Content-Type</td>
-							<td>application/json</td>
-						</tr>
-					</table>
 				</section>
 			</section>
 			<section>
 				<section>
-					<h2>https://api.dropboxapi.com/2/sharing/list_shared_links</h2>
+					<h2>Метод sharing/list_shared_links (POST)</h2>
 				</section>
 				<section>
+					<h3>Определение</h3>
+					<blockquote>
+						Получение ссылок на "расшаренные" ресурсы пользователя
+					</blockquote>
+					<h3>ULR</h3>
+					<blockquote>
+						https://api.dropboxapi.com/2/sharing/list_shared_links
+					</blockquote>
+				</section>
+				<section>
+					<h3>Заголовки</h3>
+					<table>
+						<thead>
+							<tr>
+								<th>Ключ</th>
+								<th>Значение</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Authorization</td>
+								<td>Bearer OlhaH8T4wSAAAA...</td>
+							</tr>
+							<tr>
+								<td>Content-Type</td>
+								<td>application/json</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+				<section>
+					<h3>Пример запроса</h3>
 					<pre>
 						<code class="hljs">
-							{
+{
+    //можно оставить пустым
+    // "path": "/DROPBOX_API/Test1"
+    //"path": "rev:a1c10ce0dd78"
+    // "cursor": "ZtkX9_EHj3x7PMkVuFIhwKYXEpwpLwyxp9vMKomUhllil9q7eWiAu"
+}
+						</code>
+					</pre>
+				</section>
+				<section>
+					<h3>Пример ответа</h3>
+					<pre>
+						<code class="hljs" data-trim>
+{
   "links": [
     {
       ".tag": "file",
@@ -1882,22 +2022,6 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 }
 						</code>
 					</pre>
-					<p>Body</p>
-					<pre>
-						<code class="hljs">
-							{}
-						</code>
-					</pre>
-					<table>
-						<tr>
-							<td>Authorization</td>
-							<td>Bearer OlhaH8T4wSAAAAAAAAAKrU5PxOT4QF1ZhgHdkUyXcYyeU45fiZtpBtqKWcElqMBX</td>
-						</tr>
-						<tr>
-							<td>Content-Type</td>
-							<td>application/json</td>
-						</tr>
-					</table>
 				</section>
 			</section>
 			<section>
