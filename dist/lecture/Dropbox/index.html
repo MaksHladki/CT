@@ -3,9 +3,9 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>Название лекции</title>
-	<meta name="description" content="">
-	<meta name="keywords" content="">
+	<title>Облачное хранилище данных Dropbox</title>
+	<meta name="description" content="Dropbox">
+	<meta name="keywords" content="Dropbox">
 	<meta name="author" content="Maks Hladki">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -21,8 +21,8 @@
 		<div class="slides">
 			<section>
 				<section>
-					<h1>Название лекции</h1>
-					<h3>Разработка динамичесих веб приложений</h3>
+					<h1>Облачное хранилище данных Dropbox</h1>
+					<h3>Облачные технологии</h3>
 					<p>
 						<small>Гладкий Максим Валерьевич / <a href="https://github.com/MaksHladki">github:MaksHladki</a></small>
 					</p>
@@ -614,6 +614,28 @@ e   h i   k   q r x y
 				</section>
 			</section>
 			<section>
+				<h2 class="header-hide">Лирическое отступление</h2>
+				<img src="img/лирическое_отступление.jpg" alt="" height="400">
+			</section>
+			<section>
+				<section>
+					<h2>Postman</h2>
+					<img src="img/postman_1.png" alt="" height="550">
+				</section>
+				<section>
+					<h3>Коллекции</h3>
+					<img src="img/postman_2.png" alt="" height="550">
+				</section>
+				<section>
+					<h3>Параметры запроса</h3>
+					<img src="img/postman_3.png" alt="">
+				</section>
+				<section>
+					<h3>Ответ</h3>
+					<img src="img/postman_4.png" alt="">
+				</section>
+			</section>
+			<section>
 				<section>
 					<h2>Authorization</h2>
 				</section>
@@ -643,6 +665,10 @@ e   h i   k   q r x y
 							Подходит для js-, мобильных-приложений
 						</li>
 					</ul>
+				</section>
+				<section>
+					<h3>Схема Code Flow</h3>
+					<img src="img/DR_oauth_code_flow.png" alt="">
 				</section>
 				<section>
 					<h3>Параметры запроса</h3>
@@ -747,7 +773,7 @@ e   h i   k   q r x y
 						</tbody>
 					</table>
 					<pre>
-						<code class="hljs">
+						<code class="hljs" data-trim>
 [REDIRECT_URI]
     ?access_token=ABCDEFG
     &token_type=bearer
@@ -864,58 +890,6 @@ https://api.dropboxapi.com/1/account/info
 						</code>
 					</pre>
 				</section>
-			</section>
-			<section>
-				<h3>Пример кодов ошибок</h3>
-				<table>
-					<thead>
-						<tr>
-							<th>Code</th>
-							<th>Description</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>400</td>
-							<td>Bad input parameter. Error message should indicate which one and why.</td>
-						</tr>
-						<tr>
-							<td>401</td>
-							<td>Bad or expired token. This can happen if the user or Dropbox revoked or expired an access token. To fix, you should
-								re-authenticate the user.</td>
-						</tr>
-						<tr>
-							<td>403</td>
-							<td>Bad OAuth request (wrong consumer key, bad nonce, expired timestamp...). Unfortunately, re-authenticating the user
-								won't help here.</td>
-						</tr>
-						<tr>
-							<td>404</td>
-							<td>File or folder not found at the specified path.</td>
-						</tr>
-						<tr>
-							<td>405</td>
-							<td>Request method not expected (generally should be GET or POST).</td>
-						</tr>
-						<tr>
-							<td>429</td>
-							<td>Your app is making too many requests and is being rate limited. 429s can trigger on a per-app or per-user basis.</td>
-						</tr>
-						<tr>
-							<td>503</td>
-							<td>If the response includes the Retry-After header, this means your OAuth 1.0 app is being rate limited. Otherwise, this
-								indicates a transient server error, and your app should retry its request.</td>
-						</tr>
-						<tr>
-							<td>507</td>
-							<td>User is over Dropbox storage quota.</td>
-						</tr>
-						<tr>
-							<td>5xx</td>
-							<td>User is over Dropbox storage quota.</td>
-						</tr>
-					</tbody>
-				</table>
 			</section>
 			<section>
 				<section>
@@ -2026,45 +2000,107 @@ simply because it is pain..."
 			</section>
 			<section>
 				<section>
-					<h2>https://api.dropboxapi.com/2/files/delete</h2>
+					<h2>Метод sharing/revoke_shared_link (POST)</h2>
 				</section>
 				<section>
+					<h3>Определение</h3>
+					<blockquote>
+						Отменяет действие ссылки на ресурс
+					</blockquote>
+					<h3>ULR</h3>
+					<blockquote>
+						https://api.dropboxapi.com/2/sharing/revoke_shared_link
+					</blockquote>
+				</section>
+				<section>
+					<h3>Заголовки</h3>
+					<table>
+						<thead>
+							<tr>
+								<th>Ключ</th>
+								<th>Значение</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Authorization</td>
+								<td>Bearer OlhaH8T4wSAAAA...</td>
+							</tr>
+							<tr>
+								<td>Content-Type</td>
+								<td>application/json</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+				<section>
+					<h3>Пример</h3>
+					<p>Тело запроса</p>
 					<pre>
 						<code class="hljs">
 {
-  ".tag": "folder",
-  "name": "Test4",
-  "path_lower": "/dropbox_api/test4",
-  "path_display": "/DROPBOX_API/Test4",
-  "id": "id:7yM4SdXIcWUAAAAAAAA6RQ"
-}
+    "url": "https://www.dropbox.com/sh/dn8b4szbscdeabw/AABpOrfr3Sdm-9Tjc76xqIkHa?dl=0"
+}				
 						</code>
 					</pre>
+					<p>Ответ</p>
 					<pre>
 						<code class="hljs">
-							{
-    "path": "/DROPBOX_API/Test4"
-}
+null
 						</code>
 					</pre>
-					<table>
-						<tr>
-							<td>Content-Type</td>
-							<td>application/json</td>
-						</tr>
-						<tr>
-							<td>Authorization</td>
-							<td>
-								Bearer OlhaH8T4wSAAAAAAAAAKrU5PxOT4QF1ZhgHdkUyXcYyeU45fiZtpBtqKWcElqMBX
-							</td>
-						</tr>
-					</table>
 				</section>
 			</section>
-			<!-- Содержимое лекции -->
+			<section>
+				<h3>Пример кодов ошибок</h3>
+				<small>
+				<table>
+					<thead>
+						<tr>
+							<th>Код</th>
+							<th>Описание</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>400</td>
+							<td>Неправильный входящий параметр, в сообщении приводится подробная информация</td>
+						</tr>
+						<tr>
+							<td>401</td>
+							<td>Неправильный или истекший по времени токен. Необходимо повторно произвести процесс аутентификации</td>
+						</tr>
+						<tr>
+							<td>403</td>
+							<td>Неправильный запрос (неверный ключ, истекшее время действие токена и т.д.)</td>
+						</tr>
+						<tr>
+							<td>404</td>
+							<td>Файл или папка не найлден(а) по указанному пути</td>
+						</tr>
+						<tr>
+							<td>405</td>
+							<td>Неправильный метод запроса (например, вместо POST нужно использовать GET)</td>
+						</tr>
+						<tr>
+							<td>429</td>
+							<td>Приложение посылает слишком много запросов, поэтому временно установлен лимит</td>
+						</tr>
+						<tr>
+							<td>507</td>
+							<td>Пользователь достиг квоты свободного пространства</td>
+						</tr>
+						<tr>
+							<td>5xx</td>
+							<td>Ошибка на сервере Dropbox</td>
+						</tr>
+					</tbody>
+				</table>
+				</small>
+			</section>
 			<section>
 				<h2 class="header-hide">Спасибо за внимание</h2>
-				<img src="img/thanks.jpg" alt="" height="600">
+				<img src="img/thanks.png" alt="" height="600">
 			</section>
 		</div>
 	</div>
