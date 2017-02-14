@@ -800,23 +800,69 @@ https://api.dropbox.com/1/oauth2/token
 			</section>
 			<section>
 				<section>
-					<h2>account/info</h2>
+					<h2>account/info (GET)</h2>
+				</section>
+				<section>
+					<h3>Определение</h3>
+					<blockquote>
+						Получение ифнормации об аккаунте пользователя
+					</blockquote>
+					<h3>ULR</h3>
+					<blockquote>
+						https://api.dropboxapi.com/1/account/info
+					</blockquote>
+				</section>
+				<section>
+					<h3>Заголовки</h3>
+					<table>
+						<thead>
+							<tr>
+								<th>Ключ</th>
+								<th>Значение</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Authorization</td>
+								<td>Bearer OlhaH8T4wSAAAA...</td>
+							</tr>
+						</tbody>
+					</table>
 				</section>
 				<section>
 					<h3>Пример</h3>
+					<p>Request</p>
 					<pre>
-						<code class="hljs">
+						<code class="hljs" data-trim>
 https://api.dropboxapi.com/1/account/info
-
-{"referral_link": "https://db.tt/rwlMtVVYGE", "display_name": "Maks Hladki", "uid": 286996508, "locale": "ru", "email_verified": true, "team": null, "quota_info": {"datastores": 0, "shared": 0, "quota": 4966055936, "normal": 4150711869}, "is_paired": false, "country": "BY", "name_details": {"familiar_name": "Maks", "surname": "Hladki", "given_name": "Maks"}, "email": "makshladki@gmail.com"}
 						</code>
 					</pre>
-					<table>
-						<tr>
-							<td>Authorization</td>
-							<td>Bearer OlhaH8T4wSAAAAAAAAAKrU5PxOT4QF1ZhgHdkUyXcYyeU45fiZtpBtqKWcElqMBX</td>
-						</tr>
-					</table>
+					<p>Response</p>
+					<pre>
+						<code class="hljs" data-trim>
+{
+    "referral_link": "https://db.tt/rwlMtVVYGE",
+    "display_name": "Maks Hladki", 
+    "uid": 286996508, 
+    "locale": "ru", 
+    "email_verified": true, 
+    "team": null, 
+    "quota_info": {
+        "datastores": 0, 
+        "shared": 0, 
+        "quota": 4966055936, 
+        "normal": 4150711869
+    }, 
+    "country": "BY",
+    "name_details": {
+        "familiar_name": "Maks", 
+        "surname": "Hladki",
+        "given_name": "Maks"
+    }, 
+    "email": "makshladki@gmail.com"
+}
+						</code>
+					</pre>
 				</section>
 			</section>
 			<section>
@@ -876,10 +922,52 @@ https://api.dropboxapi.com/1/account/info
 					<h2>users/get_account (POST)</h2>
 				</section>
 				<section>
-					<h3>Пример</h3>
+					<h3>Определение</h3>
+					<blockquote>
+						Получение ифнормации об аккаунте пользователя
+					</blockquote>
+					<h3>ULR</h3>
+					<blockquote>
+						https://api.dropboxapi.com/2/users/get_account
+					</blockquote>
+				</section>
+				<section>
+					<h3>Заголовки</h3>
+					<table>
+						<thead>
+							<tr>
+								<th>Ключ</th>
+								<th>Значение</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Authorization</td>
+								<td>Bearer OlhaH8T4wSAAAA...</td>
+							</tr>
+							<tr>
+								<td>Content-Type</td>
+								<td>application/json</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+				<section>
+					<h3>Тело запроса</h3>
 					<pre>
 						<code class="hljs">
-							{
+{
+    "account_id": "dbid:AADPD-wy8PRAh3kxL3WKVH1yfeXeiwEMK8s"
+    //получаем account ID из метода авторизации
+}
+						</code>
+					</pre>
+				</section>
+				<section>
+					<h3>Пример ответа</h3>
+					<pre>
+						<code class="hljs">
+{
   "account_id": "dbid:AADPD-wy8PRAh3kxL3WKVH1yfeXeiwEMK8s",
   "name": {
     "given_name": "Maks",
@@ -895,97 +983,137 @@ https://api.dropboxapi.com/1/account/info
 }
 						</code>
 					</pre>
-					<p>Body</p>
-					<pre>
-						<code class="hljs">
-{
-    "account_id": "dbid:AADPD-wy8PRAh3kxL3WKVH1yfeXeiwEMK8s"
-	//получаем account ID из метода авторизации
-}
-						</code>
-					</pre>
-					<table>
-						<tr>
-							<td>Content-Type</td>
-							<td>application/json</td>
-						</tr>
-						<tr>
-							<td>Authorization</td>
-							<td>Bearer OlhaH8T4wSAAAAAAAAAKrU5PxOT4QF1ZhgHdkUyXcYyeU45fiZtpBtqKWcElqMBX</td>
-						</tr>
-					</table>
 				</section>
 			</section>
 			<section>
 				<section>
-					<h2>Метод 2/users/get_space_usage (POST)</h2>
+					<h2>Метод users/get_space_usage (POST)</h2>
 				</section>
 				<section>
+					<h3>Определение</h3>
+					<blockquote>
+						Получение информации об использованном пространсве
+					</blockquote>
+					<h3>ULR</h3>
+					<blockquote>
+						https://api.dropboxapi.com/2/users/get_space_usage
+					</blockquote>
+				</section>
+				<section>
+					<h3>Заголовки</h3>
+					<table>
+						<thead>
+							<tr>
+								<th>Ключ</th>
+								<th>Значение</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Authorization</td>
+								<td>Bearer OlhaH8T4wSAAAA...</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+				<section>
+					<h3>Пример ответа</h3>
 					<pre>
 						<code class="hljs">	
 {
-    "used": 314159265,
-    "allocation": {
-        ".tag": "individual",
-        "allocated": 10000000000
-    }
+  "used": 4027359013,
+  //использованное пространство
+  "allocation": {
+    ".tag": "individual",
+    "allocated": 6039797760
+    //выделенное пространство
+  }
 }
 						</code>
 					</pre>
-					<table>
-						<tr>
-							<td>Authorization</td>
-							<td>Bearer OlhaH8T4wSAAAAAAAAAKrU5PxOT4QF1ZhgHdkUyXcYyeU45fiZtpBtqKWcElqMBX</td>
-						</tr>
-					</table>
 				</section>
 			</section>
 			<section>
 				<section>
-					<h3>Метод copy (POST)</h3>
+					<h2>Метод files/copy (POST)</h2>
+				</section>
+				<section>
+					<h3>Определение</h3>
+					<blockquote>
+						Копирование папки с файлами либо отдельного файла в облачном пространстве пользователя
+					</blockquote>
+					<h3>ULR</h3>
+					<blockquote>
+						https://api.dropboxapi.com/2/files/copy
+					</blockquote>
+				</section>
+				<section>
+					<h3>Заголовки</h3>
+					<table>
+						<thead>
+							<tr>
+								<th>Ключ</th>
+								<th>Значение</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Authorization</td>
+								<td>Bearer OlhaH8T4wSAAAA...</td>
+							</tr>
+							<tr>
+								<td>Content-Type</td>
+								<td>application/json</td>
+							</tr>
+						</tbody>
+					</table>
 				</section>
 				<section>
 					<h3>Пример с папкой</h3>
+					<p>Тело запроса</p>
 					<pre>
-						<code class="hljs">
-							{
-    "from_path": "/DROPBOX_API/Test1",
-    "to_path": "/DROPBOX_API/Test2",
-    "allow_shared_folder": false,
-    "autorename": false
-}
-						</code>
-					</pre>
-					<table>
-						<tr>
-							<td>Authorization</td>
-							<td>Bearer OlhaH8T4wSAAAAAAAAAKrU5PxOT4QF1ZhgHdkUyXcYyeU45fiZtpBtqKWcElqMBX</td>
-						</tr>
-						<tr>
-							<td>Content-Type</td>
-							<td>application/json</td>
-						</tr>
-					</table>
-					<p>Body</p>
-					<pre>
-						<code class="hljs">
+						<code class="hljs" data-trim>
 {
     "from_path": "/DROPBOX_API/Test1",
     "to_path": "/DROPBOX_API/Test2",
     "allow_shared_folder": false,
     "autorename": false
+}
+						</code>
+					</pre>
+					<p>Ответ</p>
+					<pre>
+						<code class="hljs" data-trim>
+{
+  ".tag": "folder",
+  "name": "Test5",
+  "path_lower": "/dropbox_api/test5",
+  "path_display": "/DROPBOX_API/Test5",
+  "id": "id:7yM4SdXIcWUAAAAAAAA9XQ"
 }
 						</code>
 					</pre>
 					<blockquote>
-						указывать нужно имя не существующей папки, либо получим ошибку с конфиликтой ситуацией, либо использовать autorename
+						Указывать нужно имя не существующей папки, либо получим ошибку с конфиликтой ситуацией. Также можно использовать ключ autorename
 					</blockquote>
 				</section>
 				<section>
 					<h3>Пример с файлом</h3>
+					<p>Тело запроса</p>
 					<pre>
 						<code class="hljs">
-							{
+{
+    "from_path": "/DROPBOX_API/Test1/Hello.txt",
+    "to_path": "/DROPBOX_API/Test2/Hello.txt",
+    "allow_shared_folder": false,
+    "autorename": false
+}
+						</code>
+					</pre>
+					<p>Ответ</p>
+					<pre>
+						<code class="hljs">
+{
   ".tag": "file",
   "name": "Hello.txt",
   "path_lower": "/dropbox_api/test2/hello.txt",
@@ -999,37 +1127,58 @@ https://api.dropboxapi.com/1/account/info
 }
 						</code>
 					</pre>
-					<table>
-						<tr>
-							<td>Authorization</td>
-							<td>Bearer OlhaH8T4wSAAAAAAAAAKrU5PxOT4QF1ZhgHdkUyXcYyeU45fiZtpBtqKWcElqMBX</td>
-						</tr>
-						<tr>
-							<td>Content-Type</td>
-							<td>application/json</td>
-						</tr>
-					</table>
-					<p>Body</p>
-					<pre>
-						<code class="hljs">
-{
-    "from_path": "/DROPBOX_API/Test1/Hello.txt",
-    "to_path": "/DROPBOX_API/Test2/Hello.txt",
-    "allow_shared_folder": false,
-    "autorename": false
-}
-						</code>
-					</pre>
 				</section>
 			</section>
 			<section>
 				<section>
-					<h2>Метод files/create_folder</h2>
+					<h2>Метод files/create_folder (POST)</h2>
 				</section>
 				<section>
+					<h3>Определение</h3>
+					<blockquote>
+						Создает новую папку в облачном пространстве пользователя
+					</blockquote>
+					<h3>ULR</h3>
+					<blockquote>
+						https://api.dropboxapi.com/2/files/create_folder
+					</blockquote>
+				</section>
+				<section>
+					<h3>Заголовки</h3>
+					<table>
+						<thead>
+							<tr>
+								<th>Ключ</th>
+								<th>Значение</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Authorization</td>
+								<td>Bearer OlhaH8T4wSAAAA...</td>
+							</tr>
+							<tr>
+								<td>Content-Type</td>
+								<td>application/json</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+				<section>
+					<h3>Пример</h3>
+					<p>Тело запроса</p>
+					<pre>
+						<code class="hljs">
+{
+    "path": "/DROPBOX_API/Test3",
+    "autorename": false
+}
+						</code>
+					</pre>
+					<p>Ответ</p>
 					<pre>
 						<code class="hljs">	
-							{
+{
   "name": "Test3",
   "path_lower": "/dropbox_api/test3",
   "path_display": "/DROPBOX_API/Test3",
@@ -1038,31 +1187,53 @@ https://api.dropboxapi.com/1/account/info
 						</code>
 					</pre>
 				</section>
-				<table>
-					<tr>
-						<td>Content-Type</td>
-						<td>application/json</td>
-					</tr>
-					<tr>
-						<td>Authorization</td>
-						<td>Bearer OlhaH8T4wSAAAAAAAAAKrU5PxOT4QF1ZhgHdkUyXcYyeU45fiZtpBtqKWcElqMBX</td>
-					</tr>
-				</table>
-				<p>Body</p>
-				<pre>
-					<code class="hljs">
-{
-    "path": "/DROPBOX_API/Test3",
-    "autorename": false
-}
-					</code>
-				</pre>
 			</section>
 			<section>
 				<section>
-					<h2>/files/delete</h2>
+					<h2>Метод files/delete (POST)</h2>
 				</section>
 				<section>
+					<h3>Определение</h3>
+					<blockquote>
+						Удаляет папку с файлами либо отдельный файл из облачного пространства пользователя
+					</blockquote>
+					<h3>ULR</h3>
+					<blockquote>
+						https://api.dropboxapi.com/2/files/delete
+					</blockquote>
+				</section>
+				<section>
+					<h3>Заголовки</h3>
+					<table>
+						<thead>
+							<tr>
+								<th>Ключ</th>
+								<th>Значение</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Authorization</td>
+								<td>Bearer OlhaH8T4wSAAAA...</td>
+							</tr>
+							<tr>
+								<td>Content-Type</td>
+								<td>application/json</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+				<section>
+					<h3>Пример с папкой</h3>
+					<p>Тело запроса</p>
+					<pre>
+						<code class="hljs">
+{
+    "path": "/DROPBOX_API/Test1"
+}
+						</code>
+					</pre>
+					<p>Ответ</p>
 					<pre>
 						<code class="hljs">
 {
@@ -1074,36 +1245,21 @@ https://api.dropboxapi.com/1/account/info
 }
 						</code>
 					</pre>
-					<table>
-						<tr>
-							<td>Content-Type</td>
-							<td>application/json</td>
-						</tr>
-						<tr>
-							<td>Authorization</td>
-							<td>Bearer OlhaH8T4wSAAAAAAAAAKrU5PxOT4QF1ZhgHdkUyXcYyeU45fiZtpBtqKWcElqMBX</td>
-						</tr>
-					</table>
-					<p>body</p>
-					<pre>
-						<code class="hljs">
-							{
-    "path": "/DROPBOX_API/Test1"
-}
-						</code>
-					</pre>
 				</section>
 				<section>
+					<h3>Пример с файлом</h3>
+					<p>Тело запроса</p>
 					<pre>
 						<code class="hljs">
-							{
+{
     "path": "/DROPBOX_API/Test1/Hello.txt"
 }
 						</code>
 					</pre>
+					<p>Ответ</p>
 					<pre>
 						<code class="hljs">
-							{
+{
   ".tag": "file",
   "name": "Hello.txt",
   "path_lower": "/dropbox_api/test1/hello.txt",
@@ -1121,34 +1277,111 @@ https://api.dropboxapi.com/1/account/info
 			</section>
 			<section>
 				<section>
-					<h3>https://content.dropboxapi.com/2/files/download</h3>
+					<h2>Метод files/download (POST)</h2>
 				</section>
 				<section>
+					<h3>Определение</h3>
+					<blockquote>
+						Скачивает файл из облачного пространства пользователя
+					</blockquote>
+					<h3>ULR</h3>
+					<blockquote>
+						https://content.dropboxapi.com/2/files/download
+					</blockquote>
+				</section>
+				<section>
+					<h3>Заголовки</h3>
+					<table>
+						<thead>
+							<tr>
+								<th>Ключ</th>
+								<th>Значение</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Authorization</td>
+								<td>Bearer OlhaH8T4wSAAAA...</td>
+							</tr>
+							<tr>
+								<td>Dropbox-API-Arg</td>
+								<td>
+									<pre>
+										<code class="hljs">
+{ 
+	"path": "/DROPBOX_API/Test1/Hello.txt" 
+}
+										</code>
+									</pre>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+				<section>
+					<h3>Пример</h3>
+					<p>
+						Ответ
+					</p>
 					<pre>
 						<code class="hljs">
-							HelloWorld
+HelloWorld
 						</code>
 					</pre>
-					<table>
-						<tr>
-							<td>Authorization</td>
-							<td>Bearer OlhaH8T4wSAAAAAAAAAKrU5PxOT4QF1ZhgHdkUyXcYyeU45fiZtpBtqKWcElqMBX</td>
-						</tr>
-						<tr>
-							<td>Dropbox-API-Arg</td>
-							<td>{ "path": "/DROPBOX_API/Test1/Hello.txt" }</td>
-						</tr>
-					</table>
 				</section>
 			</section>
 			<section>
 				<section>
-					<h2>files/get_metadata</h2>
+					<h2>Метод files/get_metadata (POST)</h2>
 				</section>
 				<section>
+					<h3>Определение</h3>
+					<blockquote>
+						Получает мета-информацию о файле либо папке
+					</blockquote>
+					<h3>ULR</h3>
+					<blockquote>
+						https://api.dropboxapi.com/2/files/get_metadata
+					</blockquote>
+				</section>
+				<section>
+					<h3>Заголовки</h3>
+					<table>
+						<thead>
+							<tr>
+								<th>Ключ</th>
+								<th>Значение</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Authorization</td>
+								<td>Bearer OlhaH8T4wSAAAA...</td>
+							</tr>
+							<tr>
+								<td>Content-Type</td>
+								<td>application/json</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+				<section>
+					<h3>Пример</h3>
+					<p>Тело запроса</p>
 					<pre>
-						<code class="hljs">
-							{
+						<code class="hljs" data-trim>
+{
+    "path": "/DROPBOX_API/Test1/hello.txt",
+    "include_media_info": true,
+    "include_deleted": true,
+    "include_has_explicit_shared_members": true
+}
+						</code>
+					</pre>
+					<p>Ответ</p>
+					<pre>
+						<code class="hljs" data-trim>
+{
   ".tag": "file",
   "name": "Hello.txt",
   "path_lower": "/dropbox_api/test1/hello.txt",
@@ -1163,36 +1396,62 @@ https://api.dropboxapi.com/1/account/info
 }
 						</code>
 					</pre>
-					<table>
-						<tr>
-							<td>Content-Type</td>
-							<td>application/json</td>
-						</tr>
-						<tr>
-							<td>Authorization</td>
-							<td>Bearer OlhaH8T4wSAAAAAAAAAKrU5PxOT4QF1ZhgHdkUyXcYyeU45fiZtpBtqKWcElqMBX</td>
-						</tr>
-					</table>
-					<pre>
-						<code class="hljs">
-							{
-    "path": "/DROPBOX_API/Test1/hello.txt",
-    "include_media_info": true,
-    "include_deleted": true,
-    "include_has_explicit_shared_members": true
-}
-						</code>
-					</pre>
 				</section>
 			</section>
 			<section>
 				<section>
-					<h2>https://api.dropboxapi.com/2/files/list_folder</h2>
+					<h2>Метод files/list_folder (POST)</h2>
 				</section>
 				<section>
+					<h3>Определение</h3>
+					<blockquote>
+						Получает список папок в облачном пространстве пользователя. Можно возвращать список по частям, используя метод list_folder/continue
+					</blockquote>
+					<h3>ULR</h3>
+					<blockquote>
+						https://api.dropboxapi.com/2/files/list_folder
+					</blockquote>
+				</section>
+				<section>
+					<h3>Заголовки</h3>
+					<table>
+						<thead>
+							<tr>
+								<th>Ключ</th>
+								<th>Значение</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Authorization</td>
+								<td>Bearer OlhaH8T4wSAAAA...</td>
+							</tr>
+							<tr>
+								<td>Content-Type</td>
+								<td>application/json</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+				<section>
+					<h3>Пример запроса</h3>
 					<pre>
 						<code class="hljs">
-							{
+{
+    "path": "/DROPBOX_API",
+    "recursive": false,
+    "include_media_info": true,
+    "include_deleted": false,
+    "include_has_explicit_shared_members": false
+}
+						</code>
+					</pre>
+				</section>
+				<section>
+					<h3>Пример ответа</h3>
+					<pre>
+						<code class="hljs">
+{
   "entries": [
     {
       ".tag": "folder",
@@ -1221,37 +1480,49 @@ https://api.dropboxapi.com/1/account/info
 }
 						</code>
 					</pre>
-					<pre>
-						<code class="hljs">
-							{
-    "path": "/DROPBOX_API",
-    "recursive": false,
-    "include_media_info": true,
-    "include_deleted": false,
-    "include_has_explicit_shared_members": false
-}
-						</code>
-					</pre>
-					<table>
-						<tr>
-							<td>Authorization</td>
-							<td>Bearer OlhaH8T4wSAAAAAAAAAKrU5PxOT4QF1ZhgHdkUyXcYyeU45fiZtpBtqKWcElqMBX</td>
-						</tr>
-						<tr>
-							<td>Content-Type</td>
-							<td>application/json</td>
-						</tr>
-					</table>
 				</section>
 			</section>
 			<section>
 				<section>
-					<h2>https://api.dropboxapi.com/2/files/move</h2>
+					<h2>Метод files/move (POST)</h2>
 				</section>
 				<section>
+					<h3>Определение</h3>
+					<blockquote>
+						Перемещает папку либо отдельный файл в облачном пространстве пользователя
+					</blockquote>
+					<h3>ULR</h3>
+					<blockquote>
+						https://api.dropboxapi.com/2/files/move
+					</blockquote>
+				</section>
+				<section>
+					<h3>Заголовки</h3>
+					<table>
+						<thead>
+							<tr>
+								<th>Ключ</th>
+								<th>Значение</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Authorization</td>
+								<td>Bearer OlhaH8T4wSAAAA...</td>
+							</tr>
+							<tr>
+								<td>Content-Type</td>
+								<td>application/json</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+				<section>
+					<h3>Пример с папкой</h3>
+					<p>Тело запроса</p>
 					<pre>
 						<code class="hljs">	
-							{
+{
     "from_path": "/DROPBOX_API/Test1",
     "to_path": "/DROPBOX_API/Test4",
     "allow_shared_folder": false,
@@ -1259,9 +1530,10 @@ https://api.dropboxapi.com/1/account/info
 }
 						</code>
 					</pre>
+					<p>Ответ</p>
 					<pre>
 						<code class="hljs">
-							{
+{
   ".tag": "folder",
   "name": "Test4",
   "path_lower": "/dropbox_api/test4",
@@ -1270,21 +1542,13 @@ https://api.dropboxapi.com/1/account/info
 }
 						</code>
 					</pre>
-					<table>
-						<tr>
-							<td>Authorization</td>
-							<td>Bearer OlhaH8T4wSAAAAAAAAAKrU5PxOT4QF1ZhgHdkUyXcYyeU45fiZtpBtqKWcElqMBX</td>
-						</tr>
-						<tr>
-							<td>Content-Type</td>
-							<td>application/json</td>
-						</tr>
-					</table>
 				</section>
 				<section>
+					<h3>Пример с файлом</h3>
+					<p>Тело запроса</p>
 					<pre>
 						<code class="hljs">
-							{
+{
     "from_path": "/DROPBOX_API/Test1/hello.txt",
     "to_path": "/DROPBOX_API/Test4/word.txt",
     "allow_shared_folder": false,
@@ -1292,9 +1556,10 @@ https://api.dropboxapi.com/1/account/info
 }
 						</code>
 					</pre>
+					<p>Ответ</p>
 					<pre>
 						<code class="hljs">
-							{
+{
   ".tag": "file",
   "name": "word.txt",
   "path_lower": "/dropbox_api/test4/word.txt",
