@@ -636,7 +636,7 @@ e   h i   k   q r x y
 					<blockquote>
 						Можно упростить процесс аутентификации, воспользовавшись услугами одного из официальных партнеров Dropbox, обеспечивающих
 						работу функции единого входа (SSO), или системой клиента, совместимой с протоколом SAML 2.0
-					</blockquote>
+						</blockquotиоe>
 				</section>
 				<section>
 					<h3>Двухэтапная проверка</h3>
@@ -646,42 +646,41 @@ e   h i   k   q r x y
 					</blockquote>
 					<p>С 2016 года доступна и частным пользователям</p>
 				</section>
-				<section>
-					<h3>Два аккаунта Dropbox</h3>
+				<sectioспас <h3>Два аккаунта Dropbox</h3>
 					<blockquote>
 						Любой пользователь может связать личный и рабочий аккаунты Dropbox на всех своих устройствах, чтобы не путаться в рабочих
 						и личных данных. Администраторы могут включить или отключить доступ к этой функции в программе для компьютера у участников
 						рабочей группы
 					</blockquote>
-				</section>
-				<section>
-					<h3>Восстановление удаленных файлов</h3>
-					<blockquote>
-						Все пользователи Dropbox Business могут самостоятельно восстанавливать утерянные файлы и старые версии файлов, созданные
-						до 120 дней назад. А значит, важные данные не потеряются и их всегда можно будет восстановить
-					</blockquote>
-				</section>
-				<section>
-					<h3>Администрирование рабочих групп</h3>
-					<blockquote>
-						Администраторы имеют полный контроль над данными участников рабочей группы и могут завершать любые веб-сеансы, удалять данные,
-						сохраненные непосредственно на компьютерах пользователей, и отключать сторонние приложения, подключенные к аккаунтам
-						пользователей. В качестве меры безопасности администраторы также могут сбросить пароли одновременно всех участников
-						рабочей группы или же отдельных сотрудников
-					</blockquote>
-				</section>
-				<section>
-					<h3>Расширенный API</h3>
-					<ul>
-						<li>Управление удостоверениями и функция единого входа (SSO)</li>
-						<li>SIEM (управление информационной безопасностью и событиями безопасности) и аналитика</li>
-						<li>Предотвращение потери данных (DLP)</li>
-						<li>Технические средства защиты авторских прав (DRM)</li>
-						<li>Обнаружение электронных данных (eDiscovery) и хранение данных для судебных нужд</li>
-						<li>Перенос данных и локальное резервное копирование данных</li>
-						<li>Более эффективные типовые рабочие процессы</li>
-					</ul>
-				</section>
+			</section>
+			<section>
+				<h3>Восстановление удаленных файлов</h3>
+				<blockquote>
+					Все пользователи Dropbox Business могут самостоятельно восстанавливать утерянные файлы и старые версии файлов, созданные
+					до 120 дней назад. А значит, важные данные не потеряются и их всегда можно будет восстановить
+				</blockquote>
+			</section>
+			<section>
+				<h3>Администрирование рабочих групп</h3>
+				<blockquote>
+					Администраторы имеют полный контроль над данными участников рабочей группы и могут завершать любые веб-сеансы, удалять данные,
+					сохраненные непосредственно на компьютерах пользователей, и отключать сторонние приложения, подключенные к аккаунтам
+					пользователей. В качестве меры безопасности администраторы также могут сбросить пароли одновременно всех участников
+					рабочей группы или же отдельных сотрудников
+				</blockquote>
+			</section>
+			<section>
+				<h3>Расширенный API</h3>
+				<ul>
+					<li>Управление удостоверениями и функция единого входа (SSO)</li>
+					<li>SIEM (управление информационной безопасностью и событиями безопасности) и аналитика</li>
+					<li>Предотвращение потери данных (DLP)</li>
+					<li>Технические средства защиты авторских прав (DRM)</li>
+					<li>Обнаружение электронных данных (eDiscovery) и хранение данных для судебных нужд</li>
+					<li>Перенос данных и локальное резервное копирование данных</li>
+					<li>Более эффективные типовые рабочие процессы</li>
+				</ul>
+			</section>
 			</section>
 			<section>
 				<h1>Dropbox API</h1>
@@ -2226,6 +2225,301 @@ null
 					</tbody>
 				</table>
 				</small>
+			</section>
+			<section>
+				<section>
+					<h2>.NET SDK</h2>
+				</section>
+				<section>
+					<h3>Документация</h3>
+					<img src="img/dotnet_link.png" alt="" height="550">
+				</section>
+				<section>
+					<h3>Dropbox package</h3>
+					<img src="img/dropbox_nuget.png" alt="">
+				</section>
+				<section>
+					<h3>AutoMapper package</h3>
+					<img src="img/automapper.png" alt="">
+				</section>
+				<section>
+					<h3>Структура проекта</h3>
+					<img src="img/solution.png" alt="">
+				</section>
+				<section>
+					<h3>Структура SDK</h3>
+					<table>
+						<thead>
+							<tr>
+								<th>Namespace</th>
+								<th>Description</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Dropbox.Api</td>
+								<td>
+									Contains the client - DropboxClient</td>
+							</tr>
+							<tr>
+								<td>Dropbox.Api.Async</td>
+								<td>
+									Contains the types used by the routes declared in AsyncRoutes</td>
+							</tr>
+							<tr>
+								<td>Dropbox.Api.Auth</td>
+								<td>Contains the types used by the routes declared in AuthRoutes
+								</td>
+							</tr>
+							<tr>
+								<td>Dropbox.Api.Auth.Routes</td>
+								<td>Contains the routes for the Dropbox.Api.Auth namespace</td>
+							</tr>
+							<tr>
+								<td>Dropbox.Api.Files</td>
+								<td>Contains endpoints and data types for basic file operations</td>
+							</tr>
+							<tr>
+								<td>Dropbox.Api.Files.Routes
+								</td>
+								<td>
+									Contains the routes for the Dropbox.Api.Files namespace</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+				<section>
+					<h3>Структура SDK</h3>
+					<table>
+						<thead>
+							<tr>
+								<th>Namespace</th>
+								<th>Description</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Dropbox.Api.Properties</td>
+								<td>Contains helper entities for property and property/template endpoints</td>
+							</tr>
+							<tr>
+								<td>Dropbox.Api.Sharing</td>
+								<td>Contains endpoints and data types for creating and managing shared links and shared folders</td>
+							</tr>
+							<tr>
+								<td>Dropbox.Api.Sharing.Routes</td>
+								<td>Contains the routes for the Dropbox.Api.Sharing namespace</td>
+							</tr>
+							<tr>
+								<td>Dropbox.Api.Stone</td>
+								<td>Contains the definitions for the interfaces used for encoding and transporting stone api objects. This also includes
+									concrete implementations of those interfaces</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+				<section>
+					<h3>Структура SDK</h3>
+					<table>
+						<thead>
+							<tr>
+								<th>Namespace</th>
+								<th>Description</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Dropbox.Api.Team</td>
+								<td>Contains the types used by the routes declared in TeamRoutes</td>
+							</tr>
+							<tr>
+								<td>Dropbox.Api.Team.Routes</td>
+								<td>Contains the routes for the Dropbox.Api.Team namespace</td>
+							</tr>
+							<tr>
+								<td>Dropbox.Api.Users
+								</td>
+								<td>Contains endpoints and data types for user management</td>
+							</tr>
+							<tr>
+								<td>Dropbox.Api.Users.Routes</td>
+								<td>Contains the routes for the Dropbox.Api.Users namespace</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+				<section>
+					<h3>Класс DropboxProvider</h3>
+					<img src="img/dropboxprovider.png" alt="">
+				</section>
+				<section>
+					<h3>Метод GetCurrentAccountAsync</h3>
+					<pre>
+						<code class="hljs">
+public async Task&lt;AccountDTO&gt; GetAccountAsync()
+{
+    var account = await _dropbox.Users.GetCurrentAccountAsync();
+    return MapConverter.Convert&lt;AccountDTO&gt;(account);
+}
+						</code>
+					</pre>
+				</section>
+				<section>
+					<h3>Метод ListFolderAsync</h3>
+					<pre>
+						<code class="hljs">
+private async Task&lt;IEnumerable&lt;Metadata&gt;&gt; 
+    GetListOfEntriesRawAsyns(string path, Func&lt;Metadata, bool&gt; condition = null)
+{
+    var list = await _dropbox.Files.ListFolderAsync(
+		path, 
+		recursive: false, 
+		includeMediaInfo: true);
+    return condition == null ? list.Entries : list.Entries.Where(condition);
+}	
+						</code>
+					</pre>
+				</section>
+				<section>
+					<h3>Метод GetMetadataAsync</h3>
+					<pre>
+						<code class="hljs">
+public async Task&lt;MetaDataDTO&gt; GetMetaDataAsync(string path)
+{
+    var metadata = await _dropbox.Files.GetMetadataAsync(path);
+    return MapConverter.Convert&lt;MetaDataDTO&gt;(metadata);
+}					</code>
+					</pre>
+				</section>
+				<section>
+					<h3>Метод CopyAsync</h3>
+					<pre>
+						<code class="hljs">
+public async Task&lt;MetaDataDTO&gt; CopyAsync(string pathFrom, string pathTo)
+{
+    var metadata = await _dropbox.Files.CopyAsync(
+		pathFrom, pathTo, 
+		allowSharedFolder: true, 
+		autorename: true);
+    return MapConverter.Convert&lt;MetaDataDTO&gt;(metadata);
+}
+						</code>
+					</pre>
+				</section>
+				<section>
+					<h3>Метод DeleteAsync</h3>
+					<pre>
+						<code class="hljs">
+public async Task&lt;MetaDataDTO&gt; DeleteAsync(string path)
+{
+    var metadata = await _dropbox.Files.DeleteAsync(path);
+    return MapConverter.Convert&lt;MetaDataDTO&gt;(metadata);
+}
+						</code>
+					</pre>
+				</section>
+				<section>
+					<h3>Метод MoveAsync</h3>
+					<pre>
+						<code class="hljs">
+public async Task&lt;MetaDataDTO&gt; MoveAsync(string pathFrom, string pathTo)
+{
+    var metadata = await _dropbox.Files.MoveAsync(
+		pathFrom, pathTo, 
+		allowSharedFolder: true, 
+		autorename: true);
+    return MapConverter.Convert&lt;MetaDataDTO&gt;(metadata);
+}	
+						</code>
+					</pre>
+				</section>
+				<section>
+					<h3>Метод SearchAsync</h3>
+					<pre>
+						<code class="hljs">
+public async Task&lt;IList&lt;FileDTO&gt;&gt; 
+    SearchAsync(string path, 
+	string query, 
+	uint startIndex = 0, 
+	uint takeCount = UInt16.MaxValue, 
+	bool includeContent = false)
+{
+    SearchMode serachMode = includeContent
+        ? SearchMode.FilenameAndContent.Instance
+        : (SearchMode)SearchMode.Filename.Instance;
+
+    var result = await _dropbox.Files.SearchAsync(path, 
+				query, 
+				startIndex, 
+				takeCount, 
+				serachMode);
+    return result.Matches.Select(x =&gt; MapConverter.Convert&lt;FileDTO&gt;(x.Metadata)).ToList();
+}						</code>
+					</pre>
+				</section>
+				<section>
+					<h3>Метод DownloadAsync</h3>
+					<pre>
+						<code class="hljs">
+public async Task&lt;Stream&gt; DownloadAsync(string path)
+{
+    var fileMetadata = await _dropbox.Files.DownloadAsync(path);
+
+    var stream = await fileMetadata.GetContentAsStreamAsync();
+    return stream;
+}
+						</code>
+					</pre>
+				</section>
+				<section>
+					<h3>Метод UploadAsync</h3>
+					<pre>
+						<code class="hljs">
+public async Task&lt;FileDTO&gt; UploadAsync(string path, Stream stream)
+{
+    var fileMetadata = await _dropbox.Files.UploadAsync(
+		path, 
+		WriteMode.Overwrite.Instance, 
+		body: stream);
+    return MapConverter.Convert&lt;FileDTO&gt;(fileMetadata);
+}	
+						</code>
+					</pre>
+				</section>
+				<section>
+					<h3>Метод CreateSharedLinkWithSettingsAsync</h3>
+					<pre>
+						<code class="hljs">
+public async Task&lt;SharedMetaDataDTO&gt; ShareAsync(string path)
+{
+    var sharedMetadata = await _dropbox.Sharing.CreateSharedLinkWithSettingsAsync(path);
+    return MapConverter.Convert&lt;SharedMetaDataDTO&gt;(sharedMetadata);
+}					</code>
+					</pre>
+				</section>
+				<section>
+					<h3>Метод RevokeSharedLinkAsync</h3>
+					<pre>
+						<code class="hljs">
+public async Task UnShareAsync(string url)
+{
+    await _dropbox.Sharing.RevokeSharedLinkAsync(url);
+}			
+						</code>
+					</pre>
+				</section>
+				<section>
+					<h3>Метод ListSharedLinksAsync</h3>
+					<pre>
+						<code class="hljs">
+public async Task&lt;IList&lt;SharedMetaDataDTO&gt;&gt; ListOfSharedLinksAsync(string path)
+{
+    var list = await _dropbox.Sharing.ListSharedLinksAsync(path, null, false);
+    return list.Links.Select(MapConverter.Convert&lt;SharedMetaDataDTO&gt;).ToList();
+}				
+						</code>
+					</pre>
+				</section>
 			</section>
 			<section>
 				<h2 class="header-hide">Спасибо за внимание</h2>
