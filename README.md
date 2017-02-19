@@ -17,5 +17,5 @@
 
 ##Тема 3. Облачные хранилища данных
 Обзор наиболее известных облачных хранилищ данных: Dropbox, OneDrive, Google Drive, Яндекс.Диск. Их основные характеристики, преимущества и недостатки.  Архитектурная модель онлайн-хранилища Dropbox. Управление пользовательскими данными в хранилище Dropbox через REST API.  
-[Лекция (будет дополнена)](https://makshladki.github.io/CT/dist/lecture/Dropbox/index.html "Лекция")  
+[Лекция](https://makshladki.github.io/CT/dist/lecture/Dropbox/index.html "Лекция")  
 [Задание](https://makshladki.github.io/CT/dist/task/Dropbox/Dropbox.pdf "Задание")  
