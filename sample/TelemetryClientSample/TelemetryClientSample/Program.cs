@@ -8,7 +8,7 @@ namespace TelemetryClientSample
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             ApplicationInsight.Instance.TrackPageView("Home");
             ApplicationInsight.Instance.TrackEvent("Redirect",
@@ -33,27 +33,44 @@ namespace TelemetryClientSample
         }
     }
 
-    public class ApplicationInsight
+    internal class ApplicationInsight
     {
-        private static readonly Lazy<ApplicationInsight> _instance = new Lazy<ApplicationInsight>(() => new ApplicationInsight());
+        #region Fields 
+
+        private const string Key = @"11d0404f-5be6-4d86-a3ce-311cd10b1b0f";
+
+        private static readonly Lazy<ApplicationInsight> _instance
+            = new Lazy<ApplicationInsight>(() => new ApplicationInsight());
 
         private readonly TelemetryClient _tc;
+
+        #endregion
+
+        #region Constructors
 
         private ApplicationInsight()
         {
             _tc = InitializeTelemetry();
         }
 
+        #endregion
+
+        #region Properties
+
         public static ApplicationInsight Instance
         {
             get { return _instance.Value; }
         }
 
+        #endregion
+
+        #region Methods
+
         private TelemetryClient InitializeTelemetry()
         {
             var tc = new TelemetryClient
             {
-                InstrumentationKey = @"11d0404f-5be6-4d86-a3ce-311cd10b1b0f"
+                InstrumentationKey = Key
             };
 
             tc.Context.User.Id = Environment.UserName;
@@ -96,5 +113,7 @@ namespace TelemetryClientSample
         {
             _tc.Flush();
         }
+
+        #endregion
     }
 }
