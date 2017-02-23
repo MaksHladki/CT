@@ -140,6 +140,7 @@
 					<li>Облачные - выполняются в среде Windows Azure в ЦОД</li>
 				</ul>
 			</section>
+
 			<section>
 				<h2>Службы Windows Azure</h2>
 				<ul>
@@ -198,51 +199,53 @@
 				</table>
 			</section>
 			<section>
-				<h2>Службы обработки данных</h2>
-				<table>
-					<tbody>
-						<tr>
-							<td>Управление данными</td>
-							<td>хранение и управление данными в ВМ + MSQL, БД Azure SQL, NoSQL решениях через REST API, blob-хранилищах</td>
-						</tr>
-						<tr>
-							<td>Бизнес-аналитика</td>
-							<td>предоставляет службы SQL Server Reporting and Analysis, SharePoint Serve, Azure SQL Reporting, Azure Marketplace и
-								HDInsight
-							</td>
-						</tr>
-						<tr>
-							<td>HDInsight</td>
-							<td>специальная надстройка, позволяющая запускать Apache Hadoop в облаке Azure</td>
-						</tr>
-					</tbody>
-				</table>
-			</section>
-			<section>
-				<h2>Службы обработки данных</h2>
-				<table>
-					<tbody>
-						<tr>
-							<td>Кэш</td>
-							<td>распределенные решение для кэширования, ускоряющее работу облачных приложений и снижающее нагрузку на БД
-							</td>
-						</tr>
-						<tr>
-							<td>Резервное копирование</td>
-							<td>средства автономной защититы данных на сервере, позволяют создавать как автоматические, так и ручные копии</td>
-						</tr>
-						<tr>
-							<td>Диспетчер восстановления</td>
-							<td>защита критически важных для бизнеса данных, приложений и служб в платформе виртуализации Hyper-V. Координация репликаций
-								и восстановление частных облаков
-							</td>
-						</tr>
-					</tbody>
-				</table>
+				<section>
+					<h2>Службы обработки данных</h2>
+					<table>
+						<tbody>
+							<tr>
+								<td>Управление данными</td>
+								<td>хранение и управление данными в ВМ + MSQL, БД Azure SQL, NoSQL решениях через REST API, blob-хранилищах</td>
+							</tr>
+							<tr>
+								<td>Бизнес-аналитика</td>
+								<td>предоставляет службы SQL Server Reporting and Analysis, SharePoint Serve, Azure SQL Reporting, Azure Marketplace
+									и HDInsight
+								</td>
+							</tr>
+							<tr>
+								<td>HDInsight</td>
+								<td>специальная надстройка, позволяющая запускать Apache Hadoop в облаке Azure</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+				<section>
+					<h3>Службы обработки данных</h3>
+					<table>
+						<tbody>
+							<tr>
+								<td>Кэш</td>
+								<td>распределенные решение для кэширования, ускоряющее работу облачных приложений и снижающее нагрузку на БД
+								</td>
+							</tr>
+							<tr>
+								<td>Резервное копирование</td>
+								<td>средства автономной защититы данных на сервере, позволяют создавать как автоматические, так и ручные копии</td>
+							</tr>
+							<tr>
+								<td>Диспетчер восстановления</td>
+								<td>защита критически важных для бизнеса данных, приложений и служб в платформе виртуализации Hyper-V. Координация репликаций
+									и восстановление частных облаков
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
 			</section>
 			<section>
 				<section>
-					<h2>Службы приложений (часть 1)</h2>
+					<h2>Службы приложений</h2>
 					<table>
 						<tbody>
 							<tr>
@@ -263,7 +266,7 @@
 					</table>
 				</section>
 				<section>
-					<h2>Службы приложений (часть 2)</h2>
+					<h3>Службы приложений</h3>
 					<table>
 						<tbody>
 							<tr>
@@ -806,8 +809,6 @@
 			<section>
 				<section>
 					<h2>Сетевые службы Windows Azure</h2>
-				</section>
-				<section>
 				</section>
 			</section>
 			<section>
@@ -1750,23 +1751,23 @@ requests
 				</section>
 				<section>
 					<h3>Схема канала точка-точка</h3>
-					<img src="img/точка_точка.png" alt="">
+					<img src="img/точка_точка.png" alt="" height="550">
 				</section>
 				<section>
 					<h3>Схема канала публикация-подписка</h3>
-					<img src="img/публикация_подписка.png" alt="">
+					<img src="img/публикация_подписка.png" alt="" height="500">
 				</section>
 				<section>
 					<h3>Схема канала недоставленных сообщений</h3>
-					<img src="img/недоставленное_сообщение.png" alt="">
+					<img src="img/недоставленное_сообщение.png" alt="" height="500">
 				</section>
 				<section>
 					<h3>Схема гарантированной доставки</h3>
-					<img src="img/гарантированная_доставка.png" alt="">
+					<img src="img/гарантированная_доставка.png" alt="" height="500">
 				</section>
 				<section>
 					<h3>Схема шины сообщений</h3>
-					<img src="img/шина_сообщений.png" alt="">
+					<img src="img/шина_сообщений.png" alt="" height="500">
 				</section>
 			</section>
 			<section>
@@ -1845,49 +1846,30 @@ requests
 			<section>
 				<h2>История развития</h2>
 				<ul>
-					<li>Version 1.0 (May 1997). Supports Windows 95, Windows NT 4.0 SP3, Windows 98 and Windows Me.</li>
-					<li>Version 2.0, included with Windows 2000. New features include:[4] Support for registering public message queues in Active
-						Directory, 128-bit encryption and digital certificate support, full COM support for message properties (achieving functional
-						parity with the Win32 API function calls, full DNS path name support, improved performance in multi-threaded applications.</li>
-					<li>Version 3.0, included with Windows XP (Professional, not Home Edition) and Windows Server 2003. New features include:[5]
-						Internet Messaging (referencing queues via HTTP, SOAP-formatted messages, MSMQ support for Internet Information Services),
-						queue aliases, multicasting of messages, and additional support for programmatic maintenance and administration of
-						queues and MSMQ itself.</li>
-					<li>Version 4.0, part of Windows Vista and Windows Server 2008. New features include:[6] Subqueues,[7] improved support
-						for "poison messages" (messages which continually fail to be processed correctly by the receiver), and support for
-						transactional receives of messages from a remote queue.</li>
-					<li>Version 5.0, part of Windows 7 and Windows Server 2008 R2. New features include:[8] support for Secure Hash Algorithm
-						2.0 (SHA2) and all advanced hash algorithms that are supported in Windows 2008 R2; by default, weaker hash algorithms
-						are disabled.</li>
-					<li>Version 6.0, part of Windows 8 and Windows Server 2012.</li>
-					<li>Version 10, part of Windows 8.1 and Windows Server 2012 R2.</li>
+					<li>Версия 1.0 (windows 95) - базовые возможности</li>
+					<li>Версия 2.0 (Windows 2000) - поддеожка Active Directory, 128-шифрование, цифровые сертификаты, работа с многопоточными
+						приложениями
+					</li>
+					<li>Версия 3.0 (Windows XP) - Internet Messagin (HTTP, SOAP), поддержка IIS, мультикаст сообщений</li>
+					<li>Версия 4.0 (Windows Vista) - поддержка транзакий для удаленных очередей, </li>
+					<li>Версия 5.0 (Windows 7) - поддержка SHA 2 и других хеш-алгоритмов</li>
+					<li>Вепсия 6.0 (Windows 8)</li>
+					<li>Версия 10.0 (Windows 8.1)</li>
+					<li>Версия 13.0 (Windows 10)</li>
 				</ul>
 			</section>
 			<section>
-				<section>
-					<h2>Функциональные возможности</h2>
-					<ul>
-						<li>Сообщения могут пересылаться в автономной среде. То есть приложению-отправителю и приложению-получателю вовсе не обязательно
-							выполняться в одно и то же время.</li>
-						<li>В экспресс-режиме сообщения могут пересылаться очень быстро. В экспресс-режиме сообщения просто сохраняются в памяти.</li>
-						<li>Для механизма восстановления сообщения могут отправляться с гарантированной доставкой. Такие сообщения сохраняются
-							в файлах и доставляются даже в случае перезагрузки сервера.</li>
-						<li>Очереди сообщений могут защищаться с применением списков контроля доступа и указания в них, каким пользователям разрешено
-							отправлять или получать сообщения из очереди. Кроме того, сообщения могут шифроваться для исключения вероятности их
-							прочтения с помощью сетевых анализаторов пакетов, а также снабжаться приоритетами, чтобы те из них, которые имеют
-							более высокий приоритет, обрабатывались быстрее.</li>
-					</ul>
-				</section>
-				<section>
-					<ul>
-						<li>В Message Queuing 3.0 поддерживается возможность отправки многоадресных (multicast) сообщений.</li>
-						<li>В Message Queuing 4.0 поддерживается возможность распознавания вредоносных сообщений. Для таких сообщений может быть
-							определена специальная очередь.</li>
-						<li>В Message Queuing 5.0 поддерживаются более безопасные алгоритмы аутентификации, и может обрабатываться большее количество
-							очередей. (В Message Queuing 4.0 при обработке нескольких тысяч очередей начинали возникать проблемы с производительностью.)</li>
-						<li>Привязана к ядру операциооеной системы </li>
-					</ul>
-				</section>
+				<h2>Функциональные возможности</h2>
+				<ul>
+					<li>Сообщения могут пересылаться в автономной среде. То есть приложению-отправителю и приложению-получателю вовсе не обязательно
+						выполняться в одно и то же время.</li>
+					<li>В экспресс-режиме сообщения могут пересылаться очень быстро за счет сохранения в памяти</li>
+					<li>Для механизма восстановления сообщения могут отправляться с гарантированной доставкой. Такие сообщения сохраняются в
+						файлах и доставляются даже в случае перезагрузки сервера</li>
+					<li>Очереди могут защищаться с применением списков контроля доступа и указания в них, каким пользователям разрешено отправлять
+						или получать сообщения из очереди. Сообщения могут шифроваться, а также снабжаться приоритетами, чтобы те из них, которые
+						имеют более высокий приоритет, обрабатывались быстрее</li>
+				</ul>
 			</section>
 			<section>
 				<h2>Порты по умолчанию</h2>
@@ -1900,16 +1882,14 @@ requests
 			<section>
 				<h2>Продукты Message Queuing</h2>
 				<ul>
-					<li>Microsoft Message Queue (MSMQ) Server Core - Основные компоненты сервера очереди сообщений (MSMQ), которые необходимы
-						для получения базовой функциональности Message Queuing.</li>
-					<li>Active Directory Domain Services Integration - Интеграция MSMQ доменных служб Active Directory. Это средство позволяет
-						записывать имена очередей сообщений в Active Directory. С помощью этой опции можно находить очереди в Active Directory
-						и защищать их на основе пользователей и групп пользователей Windows.</li>
-					<li>MSMQ HTTP Support - Поддержка протокола HTTP MSMQ. Поддержка MSMQ HTTP позволяет отправлять и принимать сообщения, используя
-						протокол HTTP.</li>
-					<li>Triggers - помощью триггеров создаются экземпляры приложений при поступлении нового сообщения.</li>
-					<li>Multicast Support - Поддержка многоадресной рассылки. Позволяет отправлять сообщения группам серверов.</li>
-					<li>MSMQ DCOM Proxy - С помощью DCOM-прокси система может подключаться к удаленному серверу, используя API-интерфейс DCOM.</li>
+					<li>Microsoft Message Queue Server Core - основные компоненты сервера очереди сообщений, которые необходимы для получения
+						базовой функциональности Message Queuing</li>
+					<li>Active Directory Domain Services Integration - интеграция MSMQ с Active Directory. Позволяет записывать имена очередей
+						сообщений, находить нужные очереди в AD и защищать их на основе пользователей и групп пользователей Windows</li>
+					<li>MSMQ HTTP Support - поддержка протокола HTTP MSMQ</li>
+					<li>Triggers - с помощью триггеров создаются экземпляры приложений при поступлении нового сообщения</li>
+					<li>Multicast Support - поддержка многоадресной рассылки. Позволяет отправлять сообщения группам серверов</li>
+					<li>MSMQ DCOM Proxy - система может подключаться к удаленному серверу, используя API-интерфейс DCOM</li>
 				</ul>
 			</section>
 			<section>
@@ -1940,6 +1920,7 @@ requests
 			<section>
 				<section>
 					<h2>Типы очередей</h2>
+					<small>
 					<ul>
 						<li>Общедоступная очередь (public) - публикуется в Active Directory. Можно обращаться, не зная имени компьютера, на котором
 							она расположена</li>
@@ -1954,6 +1935,7 @@ requests
 						<li>Системные очереди - являются частными и используются самой системой MQ для административных сообщений, хранения уведомлений
 							и обеспечения правильного порядка доставки транзакционных сообщений</li>
 					</ul>
+					</small>
 				</section>
 				<section>
 					<h3>Создание очереди</h3>
@@ -2010,7 +1992,8 @@ requests
 							<td>создает очередь по определенному пути</td>
 						</tr>
 						<tr>
-							<td>GetPrivateQueuesByMachine</td>
+							<td>GetPrivate QueuesByMachine
+							</td>
 							<td>нахождение приватных очередей по путевому либо форматному имени</td>
 						</tr>
 						<tr>
@@ -2035,7 +2018,7 @@ requests
 						</tr>
 						<tr>
 							<td>Peek</td>
-							<td>получает сообщение из очереди, но не извлекает его</td>
+							<td>получает сообщение без его извлечения</td>
 						</tr>
 						<tr>
 							<td>PeekById</td>
