@@ -23,6 +23,7 @@
 
 ##Тема 4. Разработка и тестирование приложений на платформе облачных вычислений Microsoft Azure
 Знакомство с открытой и гибкой инфраструктурой облачной платформы Microsoft Azure. Обзор вычислительных и сетевых служб. Исследование методов внедрения технологий обработки и анализа данных Windows Azure для существующего программного обеспечения. Разработка, тестирование и развертывание транзакционных Web-приложений в облачной среде.  
+[Лекция](https://makshladki.github.io/CT/dist/lecture/Azure/index.html "Лекция")    
 [Задание 1](https://makshladki.github.io/CT/dist/task/MSMQ/MSMQ.pdf "Задание 1")  
 [Задание 2](https://makshladki.github.io/CT/dist/task/NServiceBus/NServiceBus.pdf "Задание 2")  
 [Задание 3](https://makshladki.github.io/CT/dist/task/Insights/Insights.pdf "Задание 3") 
